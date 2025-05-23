@@ -24,11 +24,11 @@
 
 /* -----------------------------------------------
 Blogger Template Style
-Name:         VTrick - Premium Creative Blogger Template
-Version:      v1.9.2
-Download:     https://www.vietrick.com/vtrick-creative-blogger-template
-Author:       Lê Hòa
-Author Url:   https://www.vietrick.com
+Name:         Kmh - Simple
+Version:      v1.0.0
+Download:    
+Author:       Kmh
+Author Url:   
 -----------------------------------------------*/
 
 /*
@@ -42,6 +42,10 @@ Author Url:   https://www.vietrick.com
     <Variable name="fixedsidebar" description="Fixed Sidebar" type="length" default="1px" min="0px" max="1px" value="1px"/>
 	<Variable name="blockcode" description="Code Syntax Highlight" type="length" default="1px" min="0px" max="1px" value="1px"/>
 </Group>
+<Group description="Homepage widget Options">
+	<Variable name="home.featured.meta" description="Disable Featured post meta on homepage" type="length" default="1px" min="0px" max="1px" value="1px"/>
+    <Variable name="home.featured.cate" description="Disable Featured post category on homepage" type="length" default="1px" min="0px" max="1px" value="1px"/>
+</Group>
 <Group description="TOC Options">
 	<Variable name="autotoc" description="Auto Table of Content" type="length" default="1px" min="0px" max="1px" value="1px"/>
 	<Variable name="expandtoc" description="Expand Table of Content" type="length" default="0px" min="0px" max="1px" value="0px"/>
@@ -52,12 +56,10 @@ Author Url:   https://www.vietrick.com
     <Variable name="row.width" description="Container Width" type="length" default="1600px" min="970px" max="1600px" value="1600px"/>
     <Variable name="sidebar.width" description="Sidebar Width" type="length" default="300px" min="250px" max="336px" value="300px"/>
 </Group>
-
 <Group description="Theme Fonts">
-<!-- 바디, 메뉴, 글 제목, 글 본문 -->
     <Variable name="main.font" description="Site Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Nanum Gothic'" default="normal 400 16px $(family)"  value="normal 400 16px $(family)"/>
     <Variable name="menu.font" description="Menu Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic'" default="normal 400 15px $(family)" value="normal 400 15px $(family)"/>
-    <Variable name="title.font" description="Title Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic'" default="normal 400 34px $(family)" value="normal 400 34px $(family)"/>
+    <Variable name="title.font" description="Title Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic'" default="normal 400 20px $(family)" value="normal 400 20px $(family)"/>
     <Variable name="text.font" description="Text Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Nanum Gothic'" default="normal 400 16px $(family)"  value="normal 400 16px $(family)"/>
 </Group>
 <Group description="Background">
@@ -67,10 +69,10 @@ Author Url:   https://www.vietrick.com
     <Variable name="outer.mobile.bg" description="Outer Mobile Background" type="color" default="#F2F2F2"  value="#F0F2F5"/>
 </Group>
 <Group description="Theme Colors">
-    <Variable name="main.color" description="Theme Color" type="color" default="#FF3152" value="#1a73e8"/>
+    <Variable name="main.color" description="Theme Color" type="color" default="#FF3152" value="#ff7a18"/>
     <Variable name="title.color" description="Title Color" type="color" default="#202124" value="#202124"/>
     <Variable name="title.hover.color" description="Title Hover Color" type="color" default="$(main.color)" value="#1A73E8"/>
-    <Variable name="meta.color" description="Meta Color" type="color" default="#959595" value="#0000ff"/>
+    <Variable name="meta.color" description="Meta Color" type="color" default="#959595" value="#78797b"/>
     <Variable name="text.color" description="Text Color" type="color" default="#757575"  value="#474747"/>
 	<Variable name="accent.color" description="Accent Color" type="color" default="#0066cc"  value="#0066cc"/>
 </Group>
@@ -154,18 +156,18 @@ Author Url:   https://www.vietrick.com
     <Variable name="menufont.bolditalic" description="Menu Font Bold Italic" type="font" default="italic 700 15px $(menu.font.family)" value="italic 700 15px $(family)"/>
 
     <!-- Title Font -->
-    <Variable name="titlefont.italic" description="Title Font Italic" type="font" default="italic 400 34px $(title.font.family)" value="italic 400 34px $(family)"/>
-    <Variable name="titlefont.sb" description="Title Font SemiBold" type="font" default="normal 600 34px $(title.font.family)" value="normal 600 34px $(family)"/>
-    <Variable name="titlefont.sbitalic" description="Title Font SemiBold Italic" type="font" default="italic 600 34px $(title.font.family)" value="italic 600 34px $(family)"/>
-    <Variable name="titlefont.bold" description="Title Font Bold" type="font" default="normal 700 34px $(title.font.family)" value="normal 700 34px $(family)"/>
-    <Variable name="titlefont.bolditalic" description="Title Font Bold Italic" type="font" default="italic 700 34px $(title.font.family)" value="italic 700 34px $(family)"/>
+    <Variable name="titlefont.italic" description="Title Font Italic" type="font" default="italic 400 20px $(title.font.family)" value="italic 400 20px $(family)"/>
+    <Variable name="titlefont.sb" description="Title Font SemiBold" type="font" default="normal 600 20px $(title.font.family)" value="normal 600 20px $(family)"/>
+    <Variable name="titlefont.sbitalic" description="Title Font SemiBold Italic" type="font" default="italic 600 20px $(title.font.family)" value="italic 600 20px $(family)"/>
+    <Variable name="titlefont.bold" description="Title Font Bold" type="font" default="normal 700 20px $(title.font.family)" value="normal 700 20px $(family)"/>
+    <Variable name="titlefont.bolditalic" description="Title Font Bold Italic" type="font" default="italic 700 20px $(title.font.family)" value="italic 700 20px $(family)"/>
 
     <!-- Text Font -->
-    <Variable name="textfont.italic" description="Text Font Italic" type="font" default="italic 400 16px $(text.font.family)" value="italic 400 16px $(family)"/>
-    <Variable name="textfont.medium" description="Text Font Medium" type="font" default="normal 500 16px $(text.font.family)" value="normal 500 16px $(family)"/>
-    <Variable name="textfont.mediumitalic" description="Text Font Medium Italic" type="font" default="italic 500 16px $(text.font.family)" value="italic 500 16px $(family)"/>
-    <Variable name="textfont.bold" description="Text Font Bold" type="font" default="normal 700 16px $(text.font.family)" value="normal 700 16px $(family)"/>
-    <Variable name="textfont.bolditalic" description="Text Font Bold Italic" type="font" default="italic 700 16px $(text.font.family)" value="italic 700 16px $(family)"/>
+    <Variable name="textfont.italic" description="Text Font Italic" type="font" default="italic 400 17px $(text.font.family)" value="italic 400 17px $(family)"/>
+    <Variable name="textfont.medium" description="Text Font Medium" type="font" default="normal 500 17px $(text.font.family)" value="normal 500 17px $(family)"/>
+    <Variable name="textfont.mediumitalic" description="Text Font Medium Italic" type="font" default="italic 500 17px $(text.font.family)" value="italic 500 17px $(family)"/>
+    <Variable name="textfont.bold" description="Text Font Bold" type="font" default="normal 700 17px $(text.font.family)" value="normal 700 17px $(family)"/>
+    <Variable name="textfont.bolditalic" description="Text Font Bold Italic" type="font" default="italic 700 17px $(text.font.family)" value="italic 700 17px $(family)"/>
 </Group>
 <!-- Hidden Variables -->
 <Variable name="body.background.color" description="Comments Background" hideEditor="true" type="color" default="transparent"  value="transparent"/>
@@ -175,254 +177,25 @@ Author Url:   https://www.vietrick.com
 
 */
 
+
 /*-- CSS Variables --*/
-:root{--max-width:$(row.width);--gap:3rem;
---body-font:$(main.font.family),Arial,sans-serif;--menu-font:$(menu.font.family),Arial,sans-serif;--title-font:$(title.font.family),Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--text-font:$(text.font.family),Arial,sans-serif;
-
---body-bg-color:$(background.color);--body-bg:$(body.background);--outer-bg:$(outer.bg);--outer-mobile-bg:$(outer.mobile.bg);--main-color:$(main.color);--title-color:$(title.color);--title-hover-color:$(title.hover.color);--meta-color:$(meta.color);--text-color:$(text.color);--header-bg:$(header.bg);--header-color:$(header.color);--header-hover-color:$(header.hover.color);--submenu-bg:$(submenu.bg);--submenu-color:$(submenu.color);--submenu-hover-color:$(submenu.hover.color);--megamenu-bg:$(megamenu.bg);--megamenu-color:$(megamenu.color);--megamenu-hover-color:$(megamenu.hover.color);--mobilemenu-bg:$(mmenu.bg);--mobilemenu-color:$(mmenu.color);--mobilemenu-hover-color:$(mmenu.hover.color);--widget-bg:$(widget.bg);--widget-title-color:$(wtitle.color);--post-card-bg:$(widget.bg);--post-title-color:$(post.title.color);--post-title-hover-color:$(post.title.hover.color);--post-text-color:$(post.text.color);--footer-bg:$(footer.bg);--footer-linear-bg:linear-gradient(to right,#1fc59f 0%,#2958dc 100%);--footer-radial-bg:radial-gradient(circle at 0% -25%,#FF7948 0%,#FF8355 0,#DA2C84 42%,#3E13A4 110%);--footer-color:$(footer.color);--footer-hover-color:$(footer.hover.color);--footerbar-bg:$(footerbar.bg);--footerbar-color:$(footerbar.color);--footerbar-hover-color:$(footerbar.hover.color);--cookie-bg:$(cookie.bg);--cookie-color:$(cookie.color);--button-bg:$(button.bg);--button-lite-bg:$(button.bg) 10;--button-color:$(button.color);--button-hover-bg:$(button.hover.bg);--button-hover-color:$(button.hover.color);
-
---rgba-gray:#F0F2F5;--border-color:rgba(155,155,155,0.15);--border-radius:6px;--radius:8px;--widget-shadow:0 1px 2px rgba(0,0,0,0.025);--avatar-shadow:0px 1px 4px rgba(0,0,0,0.05);--toc-bg:#fef6ec;--toc-link:#0089c7;--accent:$(accent.color);--trending-color:#1d1d1f;--transition-1:all .1s ease;--transition-2:all .2s ease;--transition-4:all .4s ease;--shadow-1:rgba(0, 0, 0, 0.1);--shadow-2:rgba(0, 0, 0, 0.2);--shadow-5:rgba(0, 0, 0, 0.5);--shadow-8:rgba(0, 0, 0, 0.8);--box-shadow:0 1px 2px var(--shadow-2);--box-shadow-0:0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1);--box-shadow-1:0px 0px 5px 0px rgba(0,0,0,0.1),0px 0px 1px 0px rgba(0,0,0,0.1);--box-shadow-2:0px 2px 8px 0px rgba(0,0,0,0.1),0px 1px 1px 0px rgba(0,0,0,0.1);--box-shadow-3:0px 2px 12px 2px rgba(0,0,0,0.1),0px 1px 2px 0px rgba(0,0,0,0.1);--box-shadow-4:0px 8px 24px 4px rgba(0,0,0,0.1),0px 2px 2px 0px rgba(0,0,0,0.1);--card-shadow:0 2px 12px var(--shadow-2);--box-radius:max(0px, min(8px, ((100vw - 4px) - 100%) * 9999))/8px;--secondary-button-bg:#E4E6EB;--secondary-button-color:#050505;--secondary-button-hover-bg:#CCD0D5;--comment-color:#434343;--comment-bg-color:#f0f2f5;--comment-action-color:#65676b;--scroll-bg:rgba(168,173,179,.84);--content-bg:#FFF;--grd-bg:linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);--block-linear-bg:linear-gradient(to bottom,#e5e6ed 42%,#f1f2f4 81%,#ffffff 97%);--card-grd:linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.013) 8.1%,hsla(0,0%,100%,.049) 15.5%,hsla(0,0%,100%,.104) 22.5%,hsla(0,0%,100%,.175) 29%,hsla(0,0%,100%,.259) 35.3%,hsla(0,0%,100%,.352) 41.2%,hsla(0,0%,100%,.45) 47.1%,hsla(0,0%,100%,.55) 52.9%,hsla(0,0%,100%,.648) 58.8%,hsla(0,0%,100%,.741) 64.7%,hsla(0,0%,100%,.825) 71%,hsla(0,0%,100%,.896) 77.5%,hsla(0,0%,100%,.951) 84.5%,hsla(0,0%,100%,.987) 91.9%,#fff)}
-
-html.is-dark {
-  --body-bg-color: #2b2b2b;
-  --body-bg: #F1F3F4 none repeat fixed top left;
-  --outer-bg: #1a1a1a;
-  --outer-mobile-bg: #1a1a1a;
-  --title-color: #f6f7f8;
-  --title-hover-color: #1A73E8;
-  --meta-color: #aaaaaa;
-  --text-color: #b4b6ba;
-  --header-bg: #242526;
-  --header-color: #f6f7f8;
-  --header-hover-color: #1A73E8;
-  --submenu-bg: #252525;
-  --submenu-color: #f6f7f8;
-  --submenu-hover-color: #1A73E8;
-  --megamenu-bg: #252525;
-  --megamenu-color: #f6f7f8;
-  --megamenu-hover-color: #1A73E8;
-  --mobilemenu-bg: #1b1b1b;
-  --mobilemenu-color: #f6f7f8;
-  --mobilemenu-hover-color: #1A73E8;
-  --widget-bg: #202020;
-  --widget-title-color: #f6f7f8;
-  --post-card-bg: #2b2b2b;
-  --post-title-color: #f6f7f8;
-  --post-title-hover-color: #1A73E8;
-  --post-text-color: #b4b6ba;
-  --footer-bg: #202020;
-  --footer-color: $(footer.color);
-  --footer-hover-color: #1A73E8;
-  --footerbar-bg: #202020;
-  --footerbar-color: #f6f7f8;
-  --footerbar-hover-color: #1A73E8;
-  --cookie-bg: #202020;
-  --cookie-color: #b4b6ba;
-  --button-bg: $(button.bg);
-  --button-color: $(button.color);
-  --button-hover-bg: $(button.hover.bg);
-  --button-hover-color: $(button.hover.color);
-  --rgba-gray: #3A3B3C;
-  --border-color: rgba(155,155,155,0.03);
-  --toc-bg: #202020;
-  --toc-link: #0089c7;
-  --secondary-button-bg: #3A3B3C;
-  --secondary-button-hover-bg: #505151;
-  --secondary-button-color: #E4E6EB;
-  --secondary-text: #B0B3B8;
-  --comment-color: #E4E6EB;
-  --comment-bg-color: #3A3B3C;
-  --comment-action-color: #B0B3B8;
-  --content-bg: #2b2b2b;
-  --scroll-bg: rgba(88,88,88,.84);
-  --block-linear-bg: linear-gradient(to bottom, var(--outer-bg) 42%, #252525 81%, var(--body-bg-color) 97%);
-  --card-grd: linear-gradient(
-    90deg,
-    hsla(0deg 0% 17% / 0) 0,
-    hsla(0deg 0% 17% / .013) 8.1%,
-    hsla(0deg 0% 17% / .049) 15.5%,
-    hsla(0deg 0% 17% / .104) 22.5%,
-    hsla(0deg 0% 17% / .175) 29%,
-    hsla(0deg 0% 17% / .259) 35.3%,
-    hsla(0deg 0% 17% / .352) 41.2%,
-    hsla(0deg 0% 17% / .45) 47.1%,
-    hsla(0deg 0% 17% / .55) 52.9%,
-    hsla(0deg 0% 17% / .648) 58.8%,
-    hsla(0deg 0% 17% / .741) 64.7%,
-    hsla(0deg 0% 17% / .825) 71%,
-    hsla(0deg 0% 17% / .896) 77.5%,
-    hsla(0deg 0% 17% / .951) 84.5%,
-    hsla(0deg 0% 17% / .987) 91.9%,
-    var(--content-bg)
-  );
-}
-
-html.rtl {
-  --body-font: 'Tajawal', Arial, sans-serif;
-  --menu-font: 'Tajawal', Arial, sans-serif;
-  --title-font: 'Tajawal', Arial, sans-serif;
-  --text-font: 'Tajawal', Arial, sans-serif;
-}
-
+:root{--max-width:$(row.width);--gap:3rem;--body-font:$(main.font.family),Arial,sans-serif;--menu-font:$(menu.font.family),Arial,sans-serif;--title-font:$(title.font.family),Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--text-font:$(text.font.family),Arial,sans-serif;--body-bg-color:$(background.color);--body-bg:$(body.background);--outer-bg:$(outer.bg);--outer-mobile-bg:$(outer.mobile.bg);--main-color:$(main.color);--title-color:$(title.color);--title-hover-color:$(title.hover.color);--meta-color:$(meta.color);--text-color:$(text.color);--header-bg:$(header.bg);--header-color:$(header.color);--header-hover-color:$(header.hover.color);--submenu-bg:$(submenu.bg);--submenu-color:$(submenu.color);--submenu-hover-color:$(submenu.hover.color);--megamenu-bg:$(megamenu.bg);--megamenu-color:$(megamenu.color);--megamenu-hover-color:$(megamenu.hover.color);--mobilemenu-bg:$(mmenu.bg);--mobilemenu-color:$(mmenu.color);--mobilemenu-hover-color:$(mmenu.hover.color);--widget-bg:$(widget.bg);--widget-title-color:$(wtitle.color);--post-card-bg:$(widget.bg);--post-title-color:$(post.title.color);--post-title-hover-color:$(post.title.hover.color);--post-text-color:$(post.text.color);--footer-bg:$(footer.bg);--footer-linear-bg:linear-gradient(to right,#1fc59f 0%,#2958dc 100%);--footer-radial-bg:radial-gradient(circle at 0% -25%,#FF7948 0%,#FF8355 0,#DA2C84 42%,#3E13A4 110%);--footer-color:$(footer.color);--footer-hover-color:$(footer.hover.color);--footerbar-bg:$(footerbar.bg);--footerbar-color:$(footerbar.color);--footerbar-hover-color:$(footerbar.hover.color);--cookie-bg:$(cookie.bg);--cookie-color:$(cookie.color);--button-bg:$(button.bg);--button-lite-bg:$(button.bg) 10;--button-color:$(button.color);--button-hover-bg:$(button.hover.bg);--button-hover-color:$(button.hover.color);--rgba-gray:#F0F2F5;--border-color:rgba(155,155,155,0.15);--border-radius:6px;--radius:8px;--widget-shadow:0 1px 2px rgba(0,0,0,0.025);--avatar-shadow:0px 1px 4px rgba(0,0,0,0.05);--toc-bg:#fef6ec;--toc-link:#0089c7;--accent:$(accent.color);--trending-color:#1d1d1f;--transition-1:all .1s ease;--transition-2:all .2s ease;--transition-4:all .4s ease;--shadow-1:rgba(0, 0, 0, 0.1);--shadow-2:rgba(0, 0, 0, 0.2);--shadow-5:rgba(0, 0, 0, 0.5);--shadow-8:rgba(0, 0, 0, 0.8);--box-shadow:0 1px 2px var(--shadow-2);--box-shadow-0:0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1);--box-shadow-1:0px 0px 5px 0px rgba(0,0,0,0.1),0px 0px 1px 0px rgba(0,0,0,0.1);--box-shadow-2:0px 2px 8px 0px rgba(0,0,0,0.1),0px 1px 1px 0px rgba(0,0,0,0.1);--box-shadow-3:0px 2px 12px 2px rgba(0,0,0,0.1),0px 1px 2px 0px rgba(0,0,0,0.1);--box-shadow-4:0px 8px 24px 4px rgba(0,0,0,0.1),0px 2px 2px 0px rgba(0,0,0,0.1);--card-shadow:0 2px 12px var(--shadow-2);--box-radius:max(0px, min(8px, ((100vw - 4px) - 100%) * 9999))/8px;--secondary-button-bg:#E4E6EB;--secondary-button-color:#050505;--secondary-button-hover-bg:#CCD0D5;--comment-color:#434343;--comment-bg-color:#f0f2f5;--comment-action-color:#65676b;--scroll-bg:rgba(168,173,179,.84);--content-bg:#FFF;--grd-bg:linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);--block-linear-bg:linear-gradient(to bottom,#e5e6ed 42%,#f1f2f4 81%,#ffffff 97%);--card-grd:linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.013) 8.1%,hsla(0,0%,100%,.049) 15.5%,hsla(0,0%,100%,.104) 22.5%,hsla(0,0%,100%,.175) 29%,hsla(0,0%,100%,.259) 35.3%,hsla(0,0%,100%,.352) 41.2%,hsla(0,0%,100%,.45) 47.1%,hsla(0,0%,100%,.55) 52.9%,hsla(0,0%,100%,.648) 58.8%,hsla(0,0%,100%,.741) 64.7%,hsla(0,0%,100%,.825) 71%,hsla(0,0%,100%,.896) 77.5%,hsla(0,0%,100%,.951) 84.5%,hsla(0,0%,100%,.987) 91.9%,#fff)}
+html.is-dark{--body-bg-color:#2b2b2b;--body-bg:#F1F3F4 none repeat fixed top left;--outer-bg:#1a1a1a;--outer-mobile-bg:#1a1a1a;--title-color:#f6f7f8;--title-hover-color:#1A73E8;--meta-color:#aaaaaa;--text-color:#b4b6ba;--header-bg:#242526;--header-color:#f6f7f8;--header-hover-color:#1A73E8;--submenu-bg:#252525;--submenu-color:#f6f7f8;--submenu-hover-color:#1A73E8;--megamenu-bg:#252525;--megamenu-color:#f6f7f8;--megamenu-hover-color:#1A73E8;--mobilemenu-bg:#1b1b1b;--mobilemenu-color:#f6f7f8;--mobilemenu-hover-color:#1A73E8;--widget-bg:#202020;--widget-title-color:#f6f7f8;--post-card-bg:#2b2b2b;--post-title-color:#f6f7f8;--post-title-hover-color:#1A73E8;--post-text-color:b4b6ba;--footer-bg:#202020;--footer-color:$(footer.color);--footer-hover-color:#1A73E8;--footerbar-bg:#202020;--footerbar-color:#f6f7f8;--footerbar-hover-color:#1A73E8;--cookie-bg:#202020;--cookie-color:#b4b6ba;--button-bg:$(button.bg);--button-color:$(button.color);--button-hover-bg:$(button.hover.bg);--button-hover-color:$(button.hover.color);--rgba-gray:#3A3B3C;--border-color:rgba(155,155,155,0.03);--toc-bg:#202020;--toc-link:#0089c7;--secondary-button-bg:#3A3B3C;--secondary-button-hover-bg:#505151;--secondary-button-color:#E4E6EB;--secondary-text:#B0B3B8;--secondary-text:#65676B;--comment-color:#E4E6EB;--comment-bg-color:#3A3B3C;--comment-action-color:#B0B3B8;--content-bg:#2b2b2b;--scroll-bg:rgba(88,88,88,.84);--block-linear-bg:linear-gradient(to bottom,var(--outer-bg) 42%,#252525 81%,var(--body-bg-color) 97%);--card-grd:linear-gradient(90deg,hsla(0deg 0% 17% /0) 0,hsla(0deg 0% 17% /.013) 8.1%,hsla(0deg 0% 17% /.049) 15.5%,hsla(0deg 0% 17% /.104) 22.5%,hsla(0deg 0% 17% /.175) 29%,hsla(0deg 0% 17% /.259) 35.3%,hsla(0deg 0% 17% /.352) 41.2%,hsla(0deg 0% 17% /.45) 47.1%,hsla(0deg 0% 17% /.55) 52.9%,hsla(0deg 0% 17% /.648) 58.8%,hsla(0deg 0% 17% /.741) 64.7%,hsla(0deg 0% 17% /.825) 71%,hsla(0deg 0% 17% /.896) 77.5%,hsla(0deg 0% 17% /.951) 84.5%,hsla(0deg 0% 17% /.987) 91.9%,var(--content-bg))}
+html.rtl{--body-font:'Tajawal',Arial,sans-serif;--menu-font:'Tajawal',Arial,sans-serif;--title-font:'Tajawal',Arial,sans-serif;--text-font:'Tajawal',Arial,sans-serif}
 /*-- Reset CSS --*/
-/* Reset CSS */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption,
-tbody, tfoot, thead, tr, th, td, article,
-aside, canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output,
-ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: none;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* List styles */
-dl, ul, ol {
-  list-style: none;
-  list-style-position: inside;
-}
-ul li, ol li {
-  list-style: none;
-}
-
-/* Table styles */
-caption {
-  text-align: center;
-}
-
-/* Image styles */
-img {
-  border: none;
-  position: relative;
-  max-width: 100%;
-}
-
-/* Anchor styles */
-a, a:visited {
-  color: var(--main-color);
-  text-decoration: none;
-}
-a img {
-  border: 0;
-}
-
-/* Utility classes */
-.clearfix {
-  clear: both;
-}
-.center {
-  display: table;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Widget styles */
-.section, .widget, .widget ul {
-  margin: 0;
-  padding: 0;
-}
-.widget > h2, .widget > h3 {
-  display: none;
-}
-.widget iframe, .widget img {
-  max-width: 100%;
-}
-
-/* Form elements */
-button, input, select, textarea {
-  font-family: var(--body-font);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border-radius: 0;
-}
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-
-/* Miscellaneous */
-abbr {
-  text-decoration: none;
-}
-.CSS_LIGHTBOX {
-  z-index: 999999 !important;
-}
-.CSS_LIGHTBOX_ATTRIBUTION_INDEX_CONTAINER .CSS_HCONT_CHILDREN_HOLDER > .CSS_LAYOUT_COMPONENT.CSS_HCONT_CHILD:first-child > .CSS_LAYOUT_COMPONENT {
-  opacity: 0;
-}
-.separator a {
-  text-decoration: none !important;
-  clear: none !important;
-  float: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-#Navbar1, #navbar-iframe, .widget-item-control, a.quickedit, .home-link, .feed-links {
-  display: none !important;
-}
-
+a,abbr,acronym,address,applet,b,big,blockquote,body,caption,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,p,pre,q,s,samp,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var{padding:0;margin:0;border:0;outline:none;vertical-align:baseline;background:0 0;text-decoration:none}dl,ul{list-style-position:inside;list-style:none}ul li{list-style:none}caption{text-align:center}img{border:none;position:relative}a,a:visited{text-decoration:none}.clearfix{clear:both}.section,.widget,.widget ul{margin:0;padding:0}a{color:var(--main-color)}a img{border:0}abbr{text-decoration:none}.CSS_LIGHTBOX{z-index:999999!important}.CSS_LIGHTBOX_ATTRIBUTION_INDEX_CONTAINER .CSS_HCONT_CHILDREN_HOLDER > .CSS_LAYOUT_COMPONENT.CSS_HCONT_CHILD:first-child > .CSS_LAYOUT_COMPONENT{opacity:0}.separator a{text-decoration:none!important;clear:none!important;float:none!important;margin-left:0!important;margin-right:0!important}#Navbar1,#navbar-iframe,.widget-item-control,a.quickedit,.home-link,.feed-links{display:none!important}.center{display:table;margin:0 auto;position:relative}.widget > h2,.widget > h3{display:none}.widget iframe,.widget img{max-width:100%}button,input,select,textarea{font-family:var(--body-font);-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;border-radius:0}input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
 /*-- Style CSS --*/
 *{box-sizing:border-box}
-html{position:relative;word-break:break-word;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;font-size:clamp(15px, 1.1vw, 18px)}
-body{position:relative;background:var(--body-bg);background-color:var(--body-bg-color);font-family:var(--body-font);font-size:16px;color:var(--text-color);font-weight:400;font-style:normal;line-height:1.4em}
+html{position:relative;word-break:break-word;word-wrap:break-word;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;font-size: clamp(12px,calc(.7rem + .25vw),20px)}
+body{position:relative;background:var(--body-bg);background-color:var(--body-bg-color);font-family:var(--body-font);font-size:14px;color:var(--text-color);font-weight:400;font-style:normal;line-height:1.4em}
 .rtl{direction:rtl}h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700}a,button,input{transition:all 0s ease}#outer-wrapper{position:relative;overflow:hidden;width:100%;max-width:100%;background-color:var(--outer-bg);margin:0 auto;padding:0}.is-boxed #outer-wrapper{width:$(row.width + 60px);max-width:100%;box-shadow:0 0 20px rgba(0,0,0,.1)}.is-dark .is-boxed #outer-wrapper{box-shadow:0 0 20px rgba(0,0,0,.3)}.container{position:relative}.row-x1{width:100%;max-width:var(--max-width)}.row-x2{width:100%}.flex-center{display:flex;justify-content:center}#content-wrapper,#footer-ads-wrap,#header-ads-wrap{position:relative;width:100%;overflow:hidden;padding:0 var(--gap) calc(var(--gap)/2) var(--gap);margin:0 auto;max-width:var(--max-width)}#content-wrapper>.container{display:flex;justify-content:space-between}.is-left #content-wrapper>.container,.rtl .is-right #content-wrapper>.container{flex-direction:row-reverse}.rtl .is-left #content-wrapper>.container{flex-direction:row}.theiaStickySidebar:after,.theiaStickySidebar:before{content:'';display:table;clear:both}#main-wrapper{position:relative;width:calc(100% - $(sidebar.width + 30px))}.no-sidebar #main-wrapper{width:100%}#sidebar-wrapper{position:relative;width:$(sidebar.width)}.no-sidebar #sidebar-wrapper{display:none}.btn{position:relative;border:0;border-radius:var(--radius)}
+
+
 .uni-component-spacing {margin:0 0 80px}
 
 /*! Ratio16:10 */
 .svg-wrap {display: grid!important}
 .svg-wrap > * {grid-area: 1/1;}
-
-/* noto-sans-kr-100 - korean */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 100;
-  src: url('../fonts/noto-sans-kr-v36-korean-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* noto-sans-kr-300 - korean */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../fonts/noto-sans-kr-v36-korean-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* noto-sans-kr-regular - korean */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/noto-sans-kr-v36-korean-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* noto-sans-kr-500 - korean */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/noto-sans-kr-v36-korean-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* noto-sans-kr-700 - korean */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/noto-sans-kr-v36-korean-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 
 /*! Base */
 .author-avatar-wrap,.comments .avatar-image-container,.entry-image-wrap{display:block;position:relative;overflow:hidden;z-index:5;color:transparent!important}
@@ -433,7 +206,9 @@ body{position:relative;background:var(--body-bg);background-color:var(--body-bg-
 .author-row .cmt-count:hover{color:var(--main-color)}
 .PopularPosts .cmt-count:after,.author-row .cmt-count:after,.date-row .cmt-count:after,.block-items .cmt-count:after,.related-posts .cmt-count:after{content:"\f268";font-family:bootstrap-icons;vertical-align:bottom;margin-left:4px}
 .cmt-count{color:inherit}
+
 .author-avatar,.entry-thumb{display:block;position:relative;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:1;opacity:0;transition:opacity .35s ease,filter 0s ease}
+
 .author-avatar{border-radius:50%;background-size:100%;background-position:0 0}
 .author-avatar.lazy-ify,.entry-thumb.lazy-ify{opacity:1}
 .cs:hover .entry-image-wrap .entry-thumb,.entry-image-wrap:hover .entry-thumb{filter:brightness(1.03)}
@@ -465,9 +240,9 @@ body{position:relative;background:var(--body-bg);background-color:var(--body-bg-
 
 .index-post .entry-image-wrap{width:100%;margin:0 auto;}
 
-.rtl .index-post .entry-image-wrap{margin:0 0 0 16px}.index-post .entry-header{flex:1;position:relative;z-index:5;padding:1.5rem;display:flex;flex-direction:column}.index-post .entry-title{font-size:clamp(1.2rem,calc(1.2rem + .2vw),1.5rem);letter-spacing:-.05rem;font-weight:700;margin:0 0 1.5rem;line-height:1.4}.index-post .entry-meta{flex-wrap:wrap;font-size:15px;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}.index-post .entry-header p{font-size:16px}.inline-ad-wrap{position:relative;float:left;width:100%;margin:0}.inline-ad{position:relative;float:left;width:100%;text-align:center;line-height:1;margin:0}.post-animated{-webkit-animation-duration:.5s;animation-duration:.5s}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:translate3d(0,0,0)}}.post-fadeInUp{animation-name:fadeInUp}
+.rtl .index-post .entry-image-wrap{margin:0 0 0 16px}.index-post .entry-header{flex:1;position:relative;z-index:5;padding:1.5rem;display:flex;flex-direction:column}.index-post .entry-title{font-size:clamp(1.5rem,calc(1.5rem + .2vw),1.8rem);letter-spacing:-.05rem;font-weight:700;margin:0 0 1.5rem;line-height:1.3}.index-post .entry-meta{flex-wrap:wrap;font-size:15px;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}.index-post .entry-header p{font-size:16px}.inline-ad-wrap{position:relative;float:left;width:100%;margin:0}.inline-ad{position:relative;float:left;width:100%;text-align:center;line-height:1;margin:0}.post-animated{-webkit-animation-duration:.5s;animation-duration:.5s}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:translate3d(0,0,0)}}.post-fadeInUp{animation-name:fadeInUp}
 
-.is-single .item-post,.item-post-inner,.item-post-wrap{position:relative;float:left;width:100%;margin:0}.item-post .blog-entry-header{position:relative;float:left;width:100%;display:flex;flex-direction:column}#breadcrumb{float:left;display:flex;width:100%;padding-top:16px;font-size:15px;color:var(--meta-color);font-weight:400;line-height:1;margin:0 0 .5rem}#breadcrumb a{color:var(--meta-color)}#breadcrumb a.home,#breadcrumb a:hover{color:var(--main-color)}#breadcrumb em:after{content:"\f285";font-family:bootstrap-icons;font-size:9px;font-weight:900;font-style:normal;vertical-align:middle;margin:0 4px}.rtl #breadcrumb em:after{content:"\f285"}.item-post h1.entry-title{position:relative;float:left;width:100%;font-size:$(itempost.title.size);font-weight:700;margin:0}.item-post .has-meta h1.entry-title{margin:1rem 0 1.5rem}.p-eh .entry-meta{flex-wrap:wrap;justify-content:space-between;font-size:clamp(12px,calc(.7rem + .25vw),20px);margin:0}.p-eh .entry-meta .align-left,.p-eh .entry-meta .align-right{display:flex;flex-wrap:wrap;align-items:center}.p-eh .entry-meta .mi,.p-eh .entry-meta .sp{margin:0 4px 0 0}.rtl .p-eh .entry-meta .mi,.rtl .p-eh .entry-meta .sp{margin:0 0 0 4px}.p-eh .entry-meta .entry-author{align-items:center}.p-eh .entry-meta .entry-author:before{display:none}.author-avatar-wrap,.p-eh .entry-meta .author-avatar-wrap{overflow:visible;width:30px;height:30px;padding:0;margin:0 5px 0 0;border-radius:100%;border:.2em solid var(--accent)}.rtl .p-eh .entry-meta .author-avatar-wrap{margin:0 0 0 5px}.p-eh .entry-meta .author-avatar{z-index:2;border-radius:50%}.p-eh .entry-meta .author-name{font-weight:600}.entry-meta .entry-comments-link{display:none;margin:0 0 0 10px}.rlt .entry-meta .entry-comments-link{margin:0 10px 0 0}.entry-meta .entry-comments-link:before{display:inline-block;content:"\f268";font-family:bootstrap-icons;font-size:14px;color:var(--meta-color);font-weight:400;margin:0 4px 0 0;transform:scale(-1,1)}.rtl .entry-meta .entry-comments-link:before{margin:0 0 0 4px}.entry-meta .entry-comments-link.show{display:block;color:var(--meta-color)}.entry-content-wrap{position:relative;float:left;width:100%;background:var(--body-bg-color);border-radius:var(--box-radius);box-shadow:var(--box-shadow);padding:4rem 4rem .5rem;margin:2rem 0 0}#post-body{position:relative;float:left;width:100%;font-family:var(--text-font);font-size:$(itempost.content.size);color:var(--post-text-color);line-height:1.6em;padding:0;margin:0}.post-body p{margin-bottom:1rem;margin-top:1rem}.post-body p+p{margin-top:0}.post-body h1,.post-body h2,.post-body h3,.post-body h4,.post-body h5,.post-body h6{font-size:17px;color:var(--title-color);line-height:1.3em;margin:0 0 1rem;font-weight:700}.post-body h1{font-size:26px}.post-body h2{font-size:23px;margin-top:2rem}.post-body h3{font-size:20px}.post-body h4{margin-top:1rem}.post-body h2+h3,.post-body h3+h4{margin-top:1rem}.post-body img{border-radius:$(post.img.border);height:auto!important}blockquote{position:relative;background-color:var(--rgba-gray);color:var(--title-color);font-style:normal;padding:1rem 1rem 1rem 4rem;margin:0;border-radius:var(--box-radius)}
+.is-single .item-post,.item-post-inner,.item-post-wrap{position:relative;float:left;width:100%;margin:0}.item-post .blog-entry-header{position:relative;float:left;width:100%;display:flex;flex-direction:column}#breadcrumb{float:left;display:flex;width:100%;font-size:15px;color:var(--meta-color);font-weight:400;line-height:1;margin:0 0 .5rem}#breadcrumb a{color:var(--meta-color)}#breadcrumb a.home,#breadcrumb a:hover{color:var(--main-color)}#breadcrumb em:after{content:"\f285";font-family:bootstrap-icons;font-size:9px;font-weight:900;font-style:normal;vertical-align:middle;margin:0 4px}.rtl #breadcrumb em:after{content:"\f285"}.item-post h1.entry-title{position:relative;float:left;width:100%;font-size:$(itempost.title.size);font-weight:700;margin:0}.item-post .has-meta h1.entry-title{margin:1rem 0 1.5rem}.p-eh .entry-meta{flex-wrap:wrap;justify-content:space-between;font-size:clamp(12px,calc(.7rem + .25vw),20px);margin:0}.p-eh .entry-meta .align-left,.p-eh .entry-meta .align-right{display:flex;flex-wrap:wrap;align-items:center}.p-eh .entry-meta .mi,.p-eh .entry-meta .sp{margin:0 4px 0 0}.rtl .p-eh .entry-meta .mi,.rtl .p-eh .entry-meta .sp{margin:0 0 0 4px}.p-eh .entry-meta .entry-author{align-items:center}.p-eh .entry-meta .entry-author:before{display:none}.author-avatar-wrap,.p-eh .entry-meta .author-avatar-wrap{overflow:visible;width:30px;height:30px;padding:0;margin:0 5px 0 0;border-radius:100%;border:.2em solid var(--accent)}.rtl .p-eh .entry-meta .author-avatar-wrap{margin:0 0 0 5px}.p-eh .entry-meta .author-avatar{z-index:2;border-radius:50%}.p-eh .entry-meta .author-name{font-weight:600}.entry-meta .entry-comments-link{display:none;margin:0 0 0 10px}.rlt .entry-meta .entry-comments-link{margin:0 10px 0 0}.entry-meta .entry-comments-link:before{display:inline-block;content:"\f268";font-family:bootstrap-icons;font-size:14px;color:var(--meta-color);font-weight:400;margin:0 4px 0 0;transform:scale(-1,1)}.rtl .entry-meta .entry-comments-link:before{margin:0 0 0 4px}.entry-meta .entry-comments-link.show{display:block;color:var(--meta-color)}.entry-content-wrap{position:relative;float:left;width:100%;background:var(--body-bg-color);border-radius:var(--box-radius);box-shadow:var(--box-shadow);padding:4rem 4rem .5rem;margin:2rem 0 0}#post-body{position:relative;float:left;width:100%;font-family:var(--text-font);font-size:$(itempost.content.size);color:var(--post-text-color);line-height:1.6em;padding:0;margin:0}.post-body p{margin-bottom:1rem;margin-top:1rem}.post-body p+p{margin-top:0}.post-body h1,.post-body h2,.post-body h3,.post-body h4,.post-body h5,.post-body h6{font-size:17px;color:var(--title-color);line-height:1.3em;margin:0 0 1rem;font-weight:700}.post-body h1{font-size:26px}.post-body h2{font-size:23px;margin-top:2rem}.post-body h3{font-size:20px}.post-body h4{margin-top:1rem}.post-body h2+h3,.post-body h3+h4{margin-top:1rem}.post-body img{border-radius:$(post.img.border);height:auto!important}blockquote{position:relative;background-color:var(--rgba-gray);color:var(--title-color);font-style:normal;padding:1rem 1rem 1rem 4rem;margin:0;border-radius:var(--box-radius)}
 
 /*! ShortCodes */
 blockquote:before{position:absolute;left:1rem;top:10px;content:"\f255";font-family:bootstrap-icons;font-size:2rem;font-style:normal;color:var(--title-color);line-height:1;opacity:.25;margin:0}blockquote.alert,blockquote.check,blockquote.flag,blockquote.star,blockquote.warn{color:#127d55;background-color:#e6fcf3;padding:20px 20px 20px 60px}blockquote.alert:before,blockquote.check:before,blockquote.flag:before,blockquote.star:before,blockquote.warn:before{content:"\f28b";color:inherit;font-size:20px;opacity:1;left:20px;top:26px}blockquote.flag{background-color:#e1f5fe;color:#01579b}blockquote.flag:before{content:"\f3cc"}blockquote.warn{color:#68610c;background-color:#fbfecb}blockquote.warn:before{content:"\f33b"}blockquote.alert{color:#7d1212;background-color:#fce6e6}blockquote.alert:before{content:"\f2e6"}blockquote.star{color:#365aaa;background-color:#ecedfb}blockquote.star:before{content:"\f19f"}.post-body blockquote>p:first-child{margin-top:0}.post-body blockquote>p:last-child{margin-bottom:0}.post-body a.dl{display:inline-grid;grid-template-areas:"ftype ftitle" "ftype fsize";grid-template-columns:min-content;column-gap:1rem;text-align:left;padding:.5rem 1rem .5rem .5rem;margin:.5rem;border-radius:var(--radius);min-width:min(300px,50%);font-size:14px;font-weight:700;background-color:var(--comment-bg-color);color:var(--comment-color);box-shadow:var(--box-shadow)}.post-body a.dl:before{content:"\f355";font-family:bootstrap-icons;font-weight:400;grid-area:ftype;font-size:24px;line-height:1;justify-self:center;border-radius:calc(var(--radius)/ 2);padding:.65rem;color:var(--body-bg-color);background:var(--main-color)}.post-body a.dl:after{content:attr(file-size);grid-area:fsize;font-size:.8em;font-weight:400;font-style:italic;color:var(--meta-color);line-height:1.2}.post-body a.dl.zip:before{content:"\f390"}.post-body a.dl.pdf:before{content:"\f63d"}.post-body a.dl.code:before{content:"\f361"}.post-body a.dl.media:before{content:"\f37a"}.post-body a.dl:focus,.post-body a.dl:hover{text-decoration:none}.rtl blockquote:before{left:unset;right:10px}.post-body .responsive-video-wrap{position:relative;width:100%;padding:0;padding-top:56%}.post-body .responsive-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}.post-body ul{margin:0 0 1rem 2rem;list-style-position:outside}.rtl .post-body ul{padding:0 16px 0 0}.post-body li{margin:0 0 2px;padding:0}.post-body li::marker{color:var(--accent)}.post-body ul li{list-style:disc}.post-body ul ul li{list-style:circle}.rtl .post-body ul li:before{margin:0 0 0 5px}.post-body ol{counter-reset:ify;padding:0 0 0 16px;margin:10px 0}.rtl .post-body ol{padding:0 16px 0 0}.post-body ol>li{counter-increment:ify;list-style:none}.post-body ol>li:before{display:inline-block;content:counters(ify,'.') '.';margin:0 5px 0 0;color:var(--accent)}.rtl .post-body ol>li:before{margin:0 0 0 5px}.post-body u{text-decoration:underline}.post-body strike{text-decoration:line-through}.post-body sup{vertical-align:super}.post-body a{color:var(--main-color)}.post-body a:hover{text-decoration:underline}.post-body hr{border:0;height:1px;background-image:linear-gradient(to right,#f0f0f0,#00b9ff,#59d941,#f0f0f0)}
@@ -636,7 +411,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
     </b:includable>
     <b:includable id='theme-head'>
       <meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
-      <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes' name='viewport'/>
+      <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes' name='viewport'/>
       <title><b:if cond='data:view.isHomepage'><data:view.title.escaped/><b:elseif cond='data:view.isError'/>웹 페이지를 찾을 수 없습니다.| <data:blog.title/><b:else/> <data:blog.pageName/></b:if></title>
       <link href='//fonts.gstatic.com' rel='dns-prefetch'/>
       <link href='//dnjs.cloudflare.com' rel='dns-prefetch'/>
@@ -663,24 +438,12 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
       <b:if cond='data:view.isHomepage'>
         <script type='application/ld+json'>{&quot;@context&quot;:&quot;http://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:view.url.canonical/>search?q={search_term_string}&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}</script>
       </b:if>
-	  <!-- 폰트 시작 -->	
-      <!-- Bootstrap Icon 1.9.0 -->
-      <link as='style' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css' onload='this.onload=null;this.rel=&apos;stylesheet&apos;' rel='preload'/>
-      <noscript>
-        <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css' rel='stylesheet'/>
-      </noscript>
+	  <!-- Bootstrap Icon 1.9.0 -->
+	  <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css' rel='stylesheet'/>
       <!-- Noto Sans KR -->
-      <link as='style' href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&amp;display=swap' onload='this.onload=null;this.rel=&apos;stylesheet&apos;' rel='preload'/>
-      <noscript>
-        <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&amp;display=swap' rel='stylesheet'/>
-      </noscript>       
-      <b:if cond='data:blog.languageDirection == &quot;rtl&quot;'>
-        <link as='style' href='https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;display=swap' onload='this.onload=null;this.rel=&apos;stylesheet&apos;' rel='preload'/>
-        <noscript>
-          <link href='https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;display=swap' rel='stylesheet'/>
-        </noscript>
-      </b:if>
+	  <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&amp;display=swap' rel='stylesheet'/>
       
+      <b:tag cond='data:blog.languageDirection == &quot;rtl&quot;' href='https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&amp;display=swap' name='link' rel='stylesheet'/>
     </b:includable>
     <b:includable id='theme-body-class'>
       <b:class cond='data:view.isHomepage' name='is-home'/>
@@ -977,7 +740,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
               <div class='flex-left'>
                
                 <b:section class='main-logo' id='main-logo' maxwidgets='1' name='Header Logo' showaddelement='no'>
-                  <b:widget id='Header1' locked='true' title='인포너드100(헤더)' type='Header' version='2' visible='true'>
+                  <b:widget id='Header1' locked='true' title='구글 블로거 테마(헤더)' type='Header' version='2' visible='true'>
                     <b:widget-settings>
                       <b:widget-setting name='displayUrl'/>
                       <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -1076,7 +839,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
   <b:widget-settings>
     <b:widget-setting name='showSnippet'>true</b:widget-setting>
     <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-    <b:widget-setting name='postId'>6255679288334992328</b:widget-setting>
+    <b:widget-setting name='postId'>1290145976953491287</b:widget-setting>
     <b:widget-setting name='showFirstImage'>true</b:widget-setting>
     <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
   </b:widget-settings>
@@ -1136,7 +899,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
           <b:tag class='entry-header-wrap' cond='data:widget.sectionId == &quot;hero-post&quot;' name='div'>
             <div class='entry-header'>
               <h2 class='entry-title'><a expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></a></h2>
-			  <p class='entry-excerpt excerpt'><b:eval expr='data:post.snippets.long snippet { length: 150 }'/></p>
+			  <p class='entry-excerpt excerpt'><b:eval expr='data:post.snippets.long snippet { length: 290 }'/></p>
 			  <!-- Read more-->
 			  <!--
               <b:if cond='data:widget.sectionId == &quot;featured&quot;'><span class='hero-rm'><a expr:href='data:post.url.canonical' expr:title='data:title ? data:title : data:messages.readMore'><b:eval expr='data:title ? data:title : data:messages.readMore'/></a></span></b:if>
@@ -1699,6 +1462,40 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
       <b:include name='html-content'/>
     </b:includable>
            </b:widget>
+           <b:widget id='Attribution1' locked='false' title='' type='Attribution' visible='true'>
+             <b:widget-settings>
+               <b:widget-setting name='copyright'/>
+             </b:widget-settings>
+             <b:includable id='main' var='this'>
+  <div class='widget-content'>
+    <div class='blogger'>
+      <a expr:href='data:bloggerUrl' rel='nofollow'>
+        <b:include name='flatBloggerIcon'/>
+        <b:message name='messages.poweredByBlogger'/>
+      </a>
+    </div>
+
+    <b:if cond='data:imageAuthor'>
+      <div class='image-attribution'>
+        <b:if cond='data:imageAuthor.url'>
+          <b:message name='messages.templateImagesByLink'>
+            <b:param expr:value='data:imageAuthor.url'/>
+            <b:param expr:value='data:imageAuthor.name'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.templateImagesBy'>
+            <b:param expr:value='data:imageAuthor.name'/>
+          </b:message>
+        </b:if>
+      </div>
+    </b:if>
+
+    <b:if cond='data:copyright != &quot;&quot;'>
+      <div class='copyright'><data:copyright/></div>
+    </b:if>
+  </div>
+</b:includable>
+           </b:widget>
            <b:widget id='HTML20' locked='false' title='Comments' type='HTML' version='2' visible='false'>
              <b:widget-settings>
                <b:widget-setting name='content'>{getContent} $results={3} $type={comments}</b:widget-setting>
@@ -1706,6 +1503,66 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
              <b:includable id='main'>
               <b:include name='html-content'/>
             </b:includable>
+           </b:widget>
+           <b:widget id='HTML21' locked='false' title='#Footer ADS' type='HTML' version='2' visible='false'>
+             <b:widget-settings>
+               <b:widget-setting name='content'><![CDATA[<script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8255525995675707" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-8255525995675707"
+     data-ad-slot="2505402503"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>]]></b:widget-setting>
+             </b:widget-settings>
+             <b:includable id='main'>
+      <b:include name='html-content'/>
+    </b:includable>
+           </b:widget>
+           <b:widget id='TextList1' locked='false' title='Facebook SDK' type='TextList' visible='false'>
+             <b:widget-settings>
+               <b:widget-setting name='shownum'/>
+               <b:widget-setting name='sorting'>NONE</b:widget-setting>
+               <b:widget-setting name='item-0'><![CDATA[https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0]]></b:widget-setting>
+             </b:widget-settings>
+             <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+             <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:items' var='item'>
+       <li><data:item/></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+           </b:widget>
+           <b:widget id='BlogSearch1' locked='false' title='이 블로그 검색' type='BlogSearch' visible='false'>
+             <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+             <b:includable id='content'>
+  <div class='widget-content' role='search'>
+    <b:include name='searchForm'/>
+  </div>
+</b:includable>
+             <b:includable id='searchForm'>
+  <form expr:action='data:blog.searchUrl'>
+    <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+    <b:include name='urlParamsAsFormInput'/>
+    <div class='search-input'>
+      <input autocomplete='off' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q'/>
+    </div>
+    <b:include name='searchSubmit'/>
+  </form>
+</b:includable>
+             <b:includable id='searchSubmit'>
+  <input class='search-action' expr:value='data:messages.search.escaped' type='submit'/>
+</b:includable>
            </b:widget>
            <b:widget id='BlogArchive1' locked='false' title='' type='BlogArchive' visible='false'>
              <b:widget-settings>
@@ -1807,6 +1664,32 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
               <b:include name='text-content'/>
             </b:includable>
            </b:widget>
+           <b:widget id='LinkList9' locked='false' title='Family' type='LinkList' visible='false'>
+             <b:widget-settings>
+               <b:widget-setting name='link-3'>https://www.instagram.com/vietrickdotcom/ # Instagram</b:widget-setting>
+               <b:widget-setting name='sorting'>NONE</b:widget-setting>
+               <b:widget-setting name='text-1'>Premium MOD APK</b:widget-setting>
+               <b:widget-setting name='link-1'>https://ganamod.com</b:widget-setting>
+               <b:widget-setting name='text-0'>Vietrick</b:widget-setting>
+               <b:widget-setting name='link-2'>https://www.vietrick.com/apps/epub-reader/</b:widget-setting>
+               <b:widget-setting name='text-3'>instagram</b:widget-setting>
+               <b:widget-setting name='link-0'>https://www.vietrick.com</b:widget-setting>
+               <b:widget-setting name='text-2'>ePub reader online</b:widget-setting>
+             </b:widget-settings>
+             <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+             <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+           </b:widget>
            <b:widget id='LinkList4' locked='false' title='Link List' type='LinkList' visible='false'>
              <b:widget-settings>
                <b:widget-setting name='link-3'>#</b:widget-setting>
@@ -1833,13 +1716,13 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
  </div>
 </b:includable>
            </b:widget>
-           <b:widget id='LinkList12' locked='false' title='Button List' type='LinkList' visible='false'>
+           <b:widget id='LinkList5' locked='false' title='Button List' type='LinkList' visible='false'>
              <b:widget-settings>
                <b:widget-setting name='sorting'>NONE</b:widget-setting>
                <b:widget-setting name='text-1'>zalo</b:widget-setting>
                <b:widget-setting name='link-1'>#</b:widget-setting>
-               <b:widget-setting name='text-0'>messenger</b:widget-setting>
-               <b:widget-setting name='link-0'>https://m.me/dacsanDaNanggiatruyen/</b:widget-setting>
+               <b:widget-setting name='text-0'>call</b:widget-setting>
+               <b:widget-setting name='link-0'>tel:0123456789</b:widget-setting>
              </b:widget-settings>
              <b:includable id='main'>
   <b:include name='widget-title'/>
@@ -2350,75 +2233,9 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
   </div>
 </b:includable>
            </b:widget>
-           <b:widget id='BlogSearch1' locked='false' title='이 블로그 검색' type='BlogSearch' visible='false'>
-             <b:includable id='main'>
-  <b:include name='widget-title'/>
-  <b:include name='content'/>
-</b:includable>
-             <b:includable id='content'>
-  <div class='widget-content' role='search'>
-    <b:include name='searchForm'/>
-  </div>
-</b:includable>
-             <b:includable id='searchForm'>
-  <form expr:action='data:blog.searchUrl'>
-    <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
-    <b:include name='urlParamsAsFormInput'/>
-    <div class='search-input'>
-      <input autocomplete='off' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q'/>
-    </div>
-    <b:include name='searchSubmit'/>
-  </form>
-</b:includable>
-             <b:includable id='searchSubmit'>
-  <input class='search-action' expr:value='data:messages.search.escaped' type='submit'/>
-</b:includable>
-           </b:widget>
-           <b:widget id='Attribution1' locked='false' title='' type='Attribution' visible='true'>
+           <b:widget id='HTML8' locked='false' title='#Footer ADS' type='HTML' version='2' visible='false'>
              <b:widget-settings>
-               <b:widget-setting name='copyright'/>
-             </b:widget-settings>
-             <b:includable id='main' var='this'>
-  <div class='widget-content'>
-    <div class='blogger'>
-      <a expr:href='data:bloggerUrl' rel='nofollow'>
-        <b:include name='flatBloggerIcon'/>
-        <b:message name='messages.poweredByBlogger'/>
-      </a>
-    </div>
-
-    <b:if cond='data:imageAuthor'>
-      <div class='image-attribution'>
-        <b:if cond='data:imageAuthor.url'>
-          <b:message name='messages.templateImagesByLink'>
-            <b:param expr:value='data:imageAuthor.url'/>
-            <b:param expr:value='data:imageAuthor.name'/>
-          </b:message>
-        <b:else/>
-          <b:message name='messages.templateImagesBy'>
-            <b:param expr:value='data:imageAuthor.name'/>
-          </b:message>
-        </b:if>
-      </div>
-    </b:if>
-
-    <b:if cond='data:copyright != &quot;&quot;'>
-      <div class='copyright'><data:copyright/></div>
-    </b:if>
-  </div>
-</b:includable>
-           </b:widget>
-           <b:widget id='HTML21' locked='false' title='#Footer ADS' type='HTML' version='2' visible='false'>
-             <b:widget-settings>
-               <b:widget-setting name='content'><![CDATA[<script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8255525995675707" crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-8255525995675707"
-     data-ad-slot="2505402503"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>]]></b:widget-setting>
+               <b:widget-setting name='content'><![CDATA[<a class="ads-here" href="#">Responsive Advertisement</a>]]></b:widget-setting>
              </b:widget-settings>
              <b:includable id='main'>
       <b:include name='html-content'/>
@@ -3287,15 +3104,6 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
       <aside id='sidebar-wrapper'>
         <b:section class='sidebar vtrick-pro-widget-ready' id='sidebar' name='Sidebar' showaddelement='yes'>
           <b:widget id='AdSense1' locked='false' title='' type='AdSense' version='2' visible='true'>
-            <b:widget-settings>
-              <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-              <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
-              <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-            </b:widget-settings>
             <b:includable id='main'>
   <div class='widget-content'>
     <b:if cond='data:adCode'>
@@ -3821,11 +3629,11 @@ font-weight:bold;font-size:12px;
 </b:if>
 <b:include name='theme-options-js'/>
 <!-- Hosted Plugins -->
-<script defer='defer' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' type='text/javascript'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' type='text/javascript'/>
 <!-- Local Plugins -->
-  <script defer='defer' src='https://cdn.jsdelivr.net/gh/ganamod/vtrick/base.js' type='text/javascript'/>
+<script src='https://cdn.jsdelivr.net/gh/ganamod/vtrick/base.js' type='text/javascript'/>
 <!-- Theme Scripts -->
-<script defer='defer' src='https://cdn.jsdelivr.net/gh/ganamod/vtrick@227b37d/vtrick-scripts.js' type='text/javascript'/>
+<script src='https://cdn.jsdelivr.net/gh/ganamod/vtrick@227b37d/vtrick-scripts.js' type='text/javascript'/>
 
 <b:if cond='data:skin.vars.autotoc == &quot;1px&quot;'>
 	<script>
