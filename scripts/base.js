@@ -1,4 +1,4 @@
-n = require("jquery");
+// n = require("jquery");
 
 // =======================
 // Custom - Theia Sticky Sidebar | v1.7.0
