@@ -163,11 +163,11 @@ Author Url:
     <Variable name="titlefont.bolditalic" description="Title Font Bold Italic" type="font" default="italic 700 20px $(title.font.family)" value="italic 700 20px $(family)"/>
 
     <!-- Text Font -->
-    <Variable name="textfont.italic" description="Text Font Italic" type="font" default="italic 400 17px $(text.font.family)" value="italic 400 17px $(family)"/>
-    <Variable name="textfont.medium" description="Text Font Medium" type="font" default="normal 500 17px $(text.font.family)" value="normal 500 17px $(family)"/>
-    <Variable name="textfont.mediumitalic" description="Text Font Medium Italic" type="font" default="italic 500 17px $(text.font.family)" value="italic 500 17px $(family)"/>
-    <Variable name="textfont.bold" description="Text Font Bold" type="font" default="normal 700 17px $(text.font.family)" value="normal 700 17px $(family)"/>
-    <Variable name="textfont.bolditalic" description="Text Font Bold Italic" type="font" default="italic 700 17px $(text.font.family)" value="italic 700 17px $(family)"/>
+    <Variable name="textfont.italic" description="Text Font Italic" type="font" default="italic 400 16px $(text.font.family)" value="italic 400 16px $(family)"/>
+    <Variable name="textfont.medium" description="Text Font Medium" type="font" default="normal 500 16px $(text.font.family)" value="normal 500 17px $(family)"/>
+    <Variable name="textfont.mediumitalic" description="Text Font Medium Italic" type="font" default="italic 500 16px $(text.font.family)" value="italic 500 16px $(family)"/>
+    <Variable name="textfont.bold" description="Text Font Bold" type="font" default="normal 700 16px $(text.font.family)" value="normal 700 16px $(family)"/>
+    <Variable name="textfont.bolditalic" description="Text Font Bold Italic" type="font" default="italic 700 16px $(text.font.family)" value="italic 700 16px $(family)"/>
 </Group>
 <!-- Hidden Variables -->
 <Variable name="body.background.color" description="Comments Background" hideEditor="true" type="color" default="transparent"  value="transparent"/>
@@ -620,7 +620,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
         <a class='entry-image-wrap ' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:if cond='data:post.featuredImage'><svg class='entry-thumb' expr:data-image='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped, 400, &quot;16:9&quot;) : resizeImage(data:post.featuredImage, 400, &quot;16:9&quot;)' viewBox='0 0 16 9'/><b:else/><svg class='entry-thumb' data-image='https://resources.blogblog.com/img/blank.gif' viewBox='0 0 16 9'/></b:if><b:class expr:name='data:post.featuredImage.isYouTube ? &quot;is-video&quot; : &quot;is-image&quot;'/></a>
         <div class='entry-header'>
           <h2 class='entry-title'><a expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></a></h2>
-          <b:if cond='data:widgets.Blog.first.allBylineItems.timestamp'><div class='entry-meta'><span class='entry-time mi'><b:eval expr='data:post.date format &quot;yyyy. M. d.&quot;'/><time class='published' expr:datetime='data:post.date.iso8601'/></span>
+          <b:if cond='data:widgets.Blog.first.allBylineItems.timestamp'><div class='entry-meta'><span class='entry-time mi'><time class='published' expr:datetime='data:post.date.iso8601'><b:eval expr='data:post.date format &quot;yyyy. M. d.&quot;'/></time></span>
 			<b:if cond='data:post.allowComments and data:post.numberOfComments &gt; 0'><span class='cmt-count' expr:title='data:post.numberOfComments + &quot; &quot; + data:messages.comments'><data:post.numberOfComments/></span></b:if>
 		  </div></b:if>
         </div>
