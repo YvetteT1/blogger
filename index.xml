@@ -190,8 +190,6 @@ Author Url:   https://www.vietrick.com
     <Variable name="textfont.bold" description="Text Font Bold" type="font" default="normal 700 17px $(text.font.family)" value="normal 700 17px $(family)"/>
     <Variable name="textfont.bolditalic" description="Text Font Bold Italic" type="font" default="italic 700 17px $(text.font.family)" value="italic 700 17px $(family)"/>
 </Group>
-
-
 */
 
 /*-- CSS Variables --*/
@@ -285,23 +283,24 @@ height:50px
 #vtrick-pro-main-nav .mega-menu{position:static!important}
 #vtrick-pro-main-nav .mega-menu>.ul{width:100%;background-color:var(--megamenu-bg);overflow:hidden;padding:20px}
 
-.mega-menu .mega-items{display:grid;grid-template-columns:repeat(5,1fr);column-gap:20px}.mega-menu .mega-items.no-items{grid-template-columns:1fr}.mega-items .mega-item{position:relative;width:100%;display:flex;flex-direction:column;padding:0;justify-content:space-between}.mega-item .entry-image-wrap{width:100%;z-index:1;margin:0 0 8px;border-radius:var(--radius)}.mega-item .entry-title{font-size:14px}.mega-item .entry-title a{color:var(--megamenu-color)}.mega-item .entry-title a:hover{color:var(--megamenu-hover-color)}.mega-menu .error-msg{justify-content:center}
+.mega-menu .mega-items{display:grid;grid-template-columns:repeat(5,1fr);column-gap:20px}
+.mega-menu .mega-items.no-items{grid-template-columns:1fr}
+.mega-items .mega-item{position:relative;width:100%;display:flex;flex-direction:column;padding:0;justify-content:space-between}
+.mega-item .entry-image-wrap{width:100%;z-index:1;margin:0 0 8px;border-radius:var(--radius)}
+.mega-item .entry-title{font-size:14px}
+.mega-item .entry-title a{color:var(--megamenu-color)}
+.mega-item .entry-title a:hover{color:var(--megamenu-hover-color)}
+.mega-menu .error-msg{justify-content:center}
 
 .mobile-menu-toggle{display:flex;width:40px;height:40px;font-size:18px;color:var(--header-color);align-items:center}
-
 .mobile-menu-toggle:after{content:"\f479";font-family:bootstrap-icons;font-weight:900;margin:0}
-
 .mobile-menu-toggle:hover{color:var(--header-hover-color)}
-
 .tgl-wrap{height:58px;display:flex;align-items:center;justify-content:flex-end;margin:0}
-
 .tgl-style:after{content:"\f52a";font-family:bootstrap-icons;font-weight:700}.tgl-style:hover{background:var(--secondary-button-hover-bg)}
-
 .tgl-style{width:40px;height:40px;color:var(--header-color);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-
 .show-search{transition:opacity .17s ease}
 
-#slide-menu{display:block;position:fixed;width:100%;height:100%;top:0;left:0;bottom:0;background-color:var(--mobilemenu-bg);overflow:hidden;z-index:101;left:0;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
+#slide-menu{display:block;position:fixed;width:100%;height:100%;top:0;left:0;bottom:0;background-color:var(--mobilemenu-bg);overflow:hidden;z-index:101;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
 .nav-active #slide-menu{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
 .slide-menu-header{position:relative;float:left;width:100%;height:59px;background-color:var(--mobilemenu-bg);overflow:hidden;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-color)}
 
@@ -327,8 +326,8 @@ height:50px
 .hide-vtrick-pro-mobile-menu{display:flex;height:100%;color:var(--mobilemenu-color);font-size:16px;align-items:center;cursor:pointer;z-index:20;padding:0 1rem}
 .hide-vtrick-pro-mobile-menu:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}.hide-vtrick-pro-mobile-menu:hover{color:var(--mobilemenu-hover-color)}
 .slide-menu-flex{position:relative;float:left;width:100%;height:calc(100% - 59px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
-.vtrick-pro-mobile-menu{position:relative;float:left;width:100%;padding:16px}
 
+.vtrick-pro-mobile-menu{position:relative;float:left;width:100%;padding:16px}
 .vtrick-pro-mobile-menu .m-sub{display:none}
 .vtrick-pro-mobile-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
 .vtrick-pro-mobile-menu>ul li ul{overflow:hidden}
@@ -341,7 +340,18 @@ height:50px
 .vtrick-pro-mobile-menu>ul>li>ul>li a{font-size:14px;opacity:.75;padding:8px 0 8px 10px}
 .vtrick-pro-mobile-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
 
-.mm-footer{position:relative;float:left;width:100%;padding:20px 16px;margin:0}.mm-footer .mm-menu,.mm-footer .mm-social{position:relative;float:left;width:100%;margin:8px 0 0}.mm-footer .mm-social{margin:0}.mm-footer ul{display:flex;flex-wrap:wrap}.mm-footer .mm-social ul li{margin:0 16px 0 0}.mm-footer .mm-social ul li:last-child{margin:0}.mm-footer .mm-social ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);padding:0}.mm-footer .mm-social ul li a:hover{color:var(--mobilemenu-hover-color)}.mm-footer .mm-menu ul li{margin:5px 18px 0 0}.mm-footer .mm-menu ul li:last-child{margin:5px 0 0}.mm-footer .mm-menu ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}.mm-footer .mm-menu ul li a:hover{color:var(--mobilemenu-hover-color)}
+.mm-footer{position:relative;float:left;width:100%;padding:20px 16px;margin:0}
+.mm-footer .mm-menu,.mm-footer .mm-social{position:relative;float:left;width:100%;margin:8px 0 0}
+.mm-footer .mm-social{margin:0}
+.mm-footer ul{display:flex;flex-wrap:wrap}
+.mm-footer .mm-social ul li{margin:0 16px 0 0}
+.mm-footer .mm-social ul li:last-child{margin:0}
+.mm-footer .mm-social ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);padding:0}
+.mm-footer .mm-social ul li a:hover{color:var(--mobilemenu-hover-color)}
+.mm-footer .mm-menu ul li{margin:5px 18px 0 0}
+.mm-footer .mm-menu ul li:last-child{margin:5px 0 0}
+.mm-footer .mm-menu ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}
+.mm-footer .mm-menu ul li a:hover{color:var(--mobilemenu-hover-color)}
 
 .overlay{display:none}
 .nav-active .overlay{visibility:visible;opacity:1}
@@ -919,9 +929,9 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
                   <b:tag class='mobile-menu-toggle' href='javascript:;' name='a' role='button' title='Menu'/>
                 </div>
               </div>
-              <div id='slide-menu'>
-                <div class='slide-menu-header'>
-                  <a class='hide-vtrick-pro-main-menu' href='javascript:;' role='button'/>
+              <div id=''>
+                <div class=''>
+                  <a class='' href='javascript:;' role='button'/>
                   <!-- Search -->
                       <div id='main-search-wrap'>
                         <div class='main-search'>
@@ -963,7 +973,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
                       </div>
                     </div>
                 </div>
-                <div class='slide-menu-flex'>
+                <div class=''>
                   <nav class='nav-wrapper' role='navigation'>
                       <b:section class='vtrick-pro-main-nav' id='vtrick-pro-mobile-nav' maxwidgets='1' name='Header Menu' showaddelement='no'>
                         <b:widget id='LinkList101' locked='true' title='헤더 목록' type='LinkList' version='2' visible='true'>
