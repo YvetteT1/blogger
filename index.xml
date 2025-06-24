@@ -73,9 +73,8 @@ Author Url:   https://www.vietrick.com
 	<Variable name="pagetoc" description="Enable Auto TOC in Page" type="length" default="0px" min="0px" max="1px" value="1px"/>
 </Group>
 <Group description="Theme Widths">
-    <Variable name="boxed" description="Boxed Mode" type="length" default="0px" min="0px" max="1px" value="0px"/>
-    <Variable name="row.width" description="Container Width" type="length" default="1600px" min="970px" max="1600px" value="1600px"/>
-    <Variable name="sidebar.width" description="Sidebar Width" type="length" default="300px" min="250px" max="336px" value="300px"/>
+    <Variable name="row.width" description="총 너비 type="length" default="1600px" min="970px" max="1600px" value="1600px"/>
+    <Variable name="sidebar.width" description="사이드바 너비" type="length" default="300px" min="250px" max="336px" value="300px"/>
 </Group>
 <Group description="Theme Fonts">
     <Variable name="main.font" description="Site Font" type="font" family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Nanum Gothic'" default="normal 400 16px $(family)"  value="normal 400 16px $(family)"/>
@@ -204,7 +203,8 @@ html{position:relative;word-break:break-word;word-wrap:break-word;text-rendering
 body{position:relative;background:var(--body-bg);background-color:var(--body-bg-color);font-family:var(--body-font);font-size:16px;color:var(--text-color);font-weight:400;font-style:normal;line-height:1.4em}
 h1,h2,h3,h4,h5,h6{font-family:var(--title-font);font-weight:700}a,button,input{transition:all 0s ease}#outer-wrapper{position:relative;overflow:hidden;width:100%;max-width:100%;background-color:var(--outer-bg);margin:0 auto;padding:0}.container{position:relative}.row-x1{width:100%;max-width:var(--max-width)}.row-x2{width:100%}.flex-center{display:flex;justify-content:center}
 
-#content-wrapper,#footer-ads-wrap,#header-ads-wrap{position:relative;width:100%;overflow:hidden;padding:16px 0;margin:0 auto;max-width:var(--max-width)}#content-wrapper>.container{display:flex;padding:0;flex-direction:column!important;justify-content:flex-start}}
+#content-wrapper,#footer-ads-wrap,#header-ads-wrap{position:relative;width:100%;overflow:hidden;padding:16px 0;margin:0 auto;max-width:var(--max-width)}
+#content-wrapper>.container{display:flex;padding:0;flex-direction:column!important;justify-content:flex-start}}
 .theiaStickySidebar:after,.theiaStickySidebar:before{content:'';display:table;clear:both}
 #main-wrapper{position:relative;overflow: visible;min-height: 1px;height: auto !important;width:100%}#sidebar-wrapper{width:100%;margin: 16px 0 0}
 .btn{position:relative;border:0;border-radius:var(--radius)}
@@ -263,11 +263,10 @@ height:50px
 
 .header-header{position:relative;width:100%;height:59px;border-bottom:1px solid var(--border-color);padding:0 var(--gap);max-width:var(--max-width);margin:0 auto}.header-items{position:relative;float:left;width:100%;display:flex;flex-wrap:nowrap;justify-content:space-between}.flex-left{display:flex;align-items:center}.flex-right{display:flex;align-items:center}.main-logo{position:relative;float:left;height:58px;overflow:hidden;padding:0 13px 0 0}.main-logo .widget{position:relative;height:100%;display:flex;align-items:center}.main-logo .logo-img{display:flex;align-items:center;height:34px;overflow:hidden}.main-logo img{display:block;max-width:100%;max-height:100%}.main-logo .blog-title{display:block;font-size:23px;font-family:var(--title-font);color:var(--header-color);font-weight:700}.main-logo .blog-title a{color:var(--header-color)}.main-logo .blog-title a:hover{color:var(--header-hover-color)}.main-logo #h1-off{position:absolute;top:-9000px;left:-9000px;display:none;visibility:hidden}
 
-#vtrick-pro-main-nav{position:static;height:58px;z-index:10}
-#vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}#vtrick-pro-main-nav .show-menu{display:block}
-.nav-wrapper{display:none;}#vtrick-pro-main-nav{position:static;height:58px;z-index:10}
 #vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
-#vtrick-pro-main-nav .show-menu{display:block}
+.nav-wrapper{display:none;}
+#vtrick-pro-main-nav{position:static;height:58px;z-index:10}
+#vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
 #vtrick-pro-main-nav ul#vtrick-pro-main-nav-menu{display:flex;flex-wrap:wrap}
 #vtrick-pro-main-nav ul>li{position:relative;padding:0;margin:0}#vtrick-pro-main-nav-menu>li:not(:first-child){margin-left:8px}#vtrick-pro-main-nav-menu>li>a{position:relative;display:block;height:50px;font-family:var(--menu-font);font-size:15px;color:var(--header-color);font-weight:600;line-height:50px;padding:0 14px;border-radius:var(--box-radius);margin:4px 0}
 #vtrick-pro-main-nav-menu>li>a:hover{background:var(--rgba-gray)}
@@ -298,50 +297,46 @@ height:50px
 .tgl-wrap{height:58px;display:flex;align-items:center;justify-content:flex-end;margin:0}
 .tgl-style:after{content:"\f52a";font-family:bootstrap-icons;font-weight:700}.tgl-style:hover{background:var(--secondary-button-hover-bg)}
 .tgl-style{width:40px;height:40px;color:var(--header-color);font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.show-search{transition:opacity .17s ease}
+.search-toggle{transition:opacity .17s ease}
 
-#slide-menu{display:block;position:fixed;width:100%;height:100%;top:0;left:0;bottom:0;background-color:var(--mobilemenu-bg);overflow:hidden;z-index:101;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
-.nav-active #slide-menu{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
-.slide-menu-header{position:relative;float:left;width:100%;height:59px;background-color:var(--mobilemenu-bg);overflow:hidden;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-color)}
-
-#main-search-wrap{display:none;position:absolute;top:0;right:0;width:100%;height:58px;background-color:var(--header-bg);z-index:25}@-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
-.main-search{position: relative;padding-right:1rem;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
-.main-search .section{width:100%}
-.main-search .search-form{position:relative;height:38px;background-color:var(--rgba-gray);display:flex;flex:1;border:0;border-radius:var(--radius)}
-.main-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
-.main-search .search-input::placeholder,.main-search .search-input:focus{color:var(--header-color);outline:0}
-.main-search .search-input::placeholder{opacity:.65}
-.main-search .search-close{width:40px;background-color:unset;font-size:16px;color:var(--header-color);text-align:center;cursor:pointer;border:0}
-.main-search .search-close:before{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
-.main-search .search-close:hover{color:var(--header-hover-color)}
+#slide {display:none;position:fixed;width:100%;height:100%;top:0;left:0;bottom:0;background-color:var(--mobilemenu-bg);overflow:hidden;z-index:101;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
+.slide-header {position:absolute;top:0;right:0;width:100%;height:59px;background-color:var(--header-bg);z-index:25}
+.hide-slide{display:none}
+@-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
+.slide-search{position:relative;padding-right:1rem;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
+.slide-search .section{width:100%}
+.slide-search .search-form{position:relative;height:38px;background-color:var(--rgba-gray);display:flex;flex:1;border:0;border-radius:var(--radius)}
+.slide-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
+.slide-search .search-input::placeholder,.main-search .search-input:focus{color:var(--header-color);outline:0}
+.slide-search .search-input::placeholder{opacity:.65}
+.slide-search .search-close{width:40px;background-color:unset;font-size:16px;color:var(--header-color);text-align:center;cursor:pointer;border:0}
+.slide-search .search-close:before{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
+.slide-search-inner .search-close:hover{color:var(--header-hover-color)}
 .overlay{visibility:hidden;opacity:0;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);z-index:1000;margin:0;transition:all .25s ease}
 
-.mobile-search .search-form{width:100%;height:34px;background-color:var(--rgba-gray);overflow:hidden;display:flex;justify-content:space-between;border:0;border-radius:var(--radius)}
-.mobile-search .search-form:focus-within{background-color:var(--mobilemenu-bg);box-shadow:0 1px 1px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.2)}
-.mobile-search .search-input{flex:1;width:100%;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0 10px;border:0}
-.mobile-search .search-input::placeholder,.mobile-search .search-input:focus{color:var(--mobilemenu-color)}
-.mobile-search .search-input::placeholder{opacity:.65}
-.mobile-search .search-action{background-color:rgba(0,0,0,0);font-family:inherit;font-size:12px;color:var(--mobilemenu-color);font-weight:400;text-align:center;cursor:pointer;padding:0 10px;border:0;opacity:.65}
-.mobile-search .search-action:before{display:block;content:"\f52a";font-family:bootstrap-icons;font-weight:900}.mobile-search .search-action:hover{opacity:1}
+.slide-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.slide-active .slide-header{position:relative;float:left;width:100%;height:59px;background-color:var(--mobilemenu-bg);overflow:hidden;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-color)}
+
 .hide-vtrick-pro-mobile-menu{display:flex;height:100%;color:var(--mobilemenu-color);font-size:16px;align-items:center;cursor:pointer;z-index:20;padding:0 1rem}
 .hide-vtrick-pro-mobile-menu:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}.hide-vtrick-pro-mobile-menu:hover{color:var(--mobilemenu-hover-color)}
 
-.slide-menu-flex{position:relative;float:left;width:100%;height:calc(100% - 59px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
+.slide-body{display:none;position:relative;float:left;width:100%;height:calc(100% - 59px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
 
-.vtrick-pro-mobile-menu{position:relative;float:left;width:100%;padding:16px}
-.vtrick-pro-mobile-menu .m-sub{display:none}
-.vtrick-pro-mobile-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
-.vtrick-pro-mobile-menu>ul li ul{overflow:hidden}
-.vtrick-pro-mobile-menu ul li a{font-size:15px;color:var(--mobilemenu-color);font-weight:400;padding:8px 0;display:block}
-.vtrick-pro-mobile-menu>ul>li>a{font-family:var(--menu-font);font-weight:600}
-.vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle{position:absolute;top:0;right:0;width:30px;color:var(--mobilemenu-color);text-align:right;cursor:pointer;padding:8px 0}
-.vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle:after{content:"\f282";font-family:bootstrap-icons;font-weight:900;float:right;font-size:12px;text-align:right;transition:all 0s ease}
-.vtrick-pro-mobile-menu ul li.has-sub.show>.submenu-toggle:after{content:"\f286"}
-.vtrick-pro-mobile-menu ul li a:hover,.vtrick-pro-mobile-menu ul li.has-sub.show>.submenu-toggle,.vtrick-pro-mobile-menu ul li.has-sub.show>a{color:var(--mobilemenu-hover-color)}
-.vtrick-pro-mobile-menu>ul>li>ul>li a{font-size:14px;opacity:.75;padding:8px 0 8px 10px}
-.vtrick-pro-mobile-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
+.vtrick-pro-main-nav-menu{position:relative;float:left;width:100%;padding:16px}
+.vtrick-pro-main-nav-menu .m-sub{display:none}
+.vtrick-pro-main-nav-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
+.vtrick-pro-main-nav-menu>ul li ul{overflow:hidden}
+.vtrick-pro-main-nav-menu ul li a{font-size:15px;color:var(--mobilemenu-color);font-weight:400;padding:8px 0;display:block}
+.vtrick-pro-main-nav-menu>ul>li>a{font-family:var(--menu-font);font-weight:600}
+.vtrick-pro-main-nav-menu ul li.has-sub .submenu-toggle{position:absolute;top:0;right:0;width:30px;color:var(--mobilemenu-color);text-align:right;cursor:pointer;padding:8px 0}
+.vtrick-pro-main-nav-menu ul li.has-sub .submenu-toggle:after{content:"\f282";font-family:bootstrap-icons;font-weight:900;float:right;font-size:12px;text-align:right;transition:all 0s ease}
+.vtrick-pro-main-nav-menu ul li.has-sub.show>.submenu-toggle:after{content:"\f286"}
+.vtrick-pro-main-nav-menu ul li a:hover,..vtrick-pro-main-nav-menu ul li.has-sub.show>.submenu-toggle,
+.vtrick-pro-main-nav-menu ul li.has-sub.show>a{color:var(--mobilemenu-hover-color)}
+.vtrick-pro-main-nav-menu>ul>li>ul>li a{font-size:14px;opacity:.75;padding:8px 0 8px 10px}
+.vtrick-pro-main-nav-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
 
-.mm-footer{position:relative;float:left;width:100%;padding:20px 16px;margin:0}
+.slide-footer{display:none;position:relative;float:left;width:100%;padding:20px 16px;margin:0}
 .mm-footer .mm-menu,.mm-footer .mm-social{position:relative;float:left;width:100%;margin:8px 0 0}
 .mm-footer .mm-social{margin:0}
 .mm-footer ul{display:flex;flex-wrap:wrap}
@@ -415,18 +410,13 @@ ul.cta-containter{display:block;position:fixed;z-index:50;width:40px;bottom:18px
 .particle{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;-webkit-transform:translateZ(0);transform:translateZ(0)}.particle::after,.particle::before,[class*=particle-]::after,[class*=particle-]::before{content:"";display:block;position:absolute;bottom:-100px;border:4px solid rgba(255,255,255,.1);-webkit-animation:square 10s infinite;animation:square 10s infinite;border-radius:50%}.particle-dark [class*=particle-]::after,.particle-dark [class*=particle-]::before,.particle-dark::after,.particle-dark::before{border-color:rgba(0,0,0,.8)}.particle-item:nth-child(3)::before,.particle-item:nth-child(5)::after,.particle-item:nth-child(5)::before,.particle::after,.particle::before{border-radius:0}.particle-item:nth-child(1)::after,.particle-item:nth-child(1)::before,.particle-item:nth-child(5)::after,.particle::before{width:15px;height:15px}.particle-item:nth-child(2)::after,.particle-item:nth-child(4)::after,.particle-item:nth-child(5)::before{width:28px;height:28px}.particle-item:nth-child(2)::before,.particle-item:nth-child(3)::after{width:18px;height:18px}.particle-item:nth-child(3)::before,.particle-item:nth-child(4)::before,.particle::after{width:20px;height:20px}.particle::before{left:20%;-webkit-animation-duration:16s;animation-duration:16s}.particle-item:nth-child(1)::before{left:38%}.particle-item:nth-child(1)::after{left:24%;-webkit-animation-duration:8s;animation-duration:8s}.particle-item:nth-child(2)::after{left:50%;-webkit-animation-delay:5s;animation-delay:5s}.particle-item:nth-child(2)::before{left:40%;-webkit-animation-delay:7s;animation-delay:7s;-webkit-animation-duration:15s;animation-duration:15s}.particle-item:nth-child(3)::after{left:36%;-webkit-animation-delay:6s;animation-delay:6s}.particle-item:nth-child(3)::before{left:44%;-webkit-animation-delay:10s;animation-delay:10s;-webkit-animation-duration:20s;animation-duration:20s}.particle-item:nth-child(4)::after{left:58%;-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-duration:18s;animation-duration:18s}.particle-item:nth-child(4)::before{left:45%;-webkit-animation-duration:14s;animation-duration:14s}.particle-item:nth-child(5)::after{left:66%;-webkit-animation-delay:3s;animation-delay:3s;-webkit-animation-duration:12s;animation-duration:12s}.particle-item:nth-child(5)::before{left:74%;-webkit-animation-duration:25s;animation-duration:25s}.particle::after{left:80%;-webkit-animation-delay:4s;animation-delay:4s}#particle{background-size:cover;background-repeat:no-repeat;background-position:50%}#footer-wrapper{color:var(--footer-color)}.primary-footer a{color:var(--footer-color)}
 
 
-
-
-
 /* Responsive */
-@media only screen and (max-width:$(row.width + 60px)){}
-@media only screen and (max-width:980px){}
-@media only screen and (max-width:880px){}
-@media only screen and (max-width:800px){}
-@media only screen and (max-width:680px){}
-@media only screen and (max-width:480px){}
-@media only screen and (max-width:380px){}
-@media only screen and (max-width:340px){}
+
+@media only screen and (min-width:980px){
+  #vtrick-pro-main-nav .show-menu{display:block}
+}
+@media only screen and (min-width:$(row.width + 60px)){}
+
 
 /*! Scroll bar */
 ::-webkit-scrollbar-track{background-color:var(--outer-bg)}::-webkit-scrollbar-thumb{-webkit-border-radius:.5625rem;border-radius:.5625rem;border:.375rem solid transparent;background-color:var(--scroll-bg);background-clip:padding-box}::-webkit-scrollbar-corner{background-color:var(--outer-bg)}::-webkit-scrollbar{width:1.25rem;background-color:var(--outer-bg)}
@@ -926,55 +916,53 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
               </div>
               <div class='flex-right'>
                 <div class='tgl-wrap'>
-                  <b:tag class='tgl-style show-search' expr:title='data:messages.search' href='javascript:;' name='a' role='button' expr:aria-label='data:messages.search.escaped'/>
-                  <b:tag class='mobile-menu-toggle' href='javascript:;' name='a' role='button' title='Menu'/>
+                  <b:tag class='tgl-style slide-search-btn' expr:title='data:messages.search' href='javascript:;' name='a' role='button' expr:aria-label='data:messages.search.escaped'/>
+                  <b:tag class='slide-nav-btn' href='javascript:;' name='a' role='button' title='Menu'/>
                 </div>
               </div>
-              <div id='slide-menu'>
-                <div class=''>
-                  <!--<a class='' href='javascript:;' role='button'/>-->
+              <div id='slide'>
+                <div class='slide-header'>
+                  <a class='hide-slide' href='javascript:;' role='button'/>
                   <!-- Search -->
-                      <div id='main-search-wrap'>
-                        <div class='main-search'>
-                          <b:section id='search_top' name='Search (Top)' showaddelement='true'>
-                            <b:widget id='BlogSearch1' locked='true' title='이 블로그 검색' type='BlogSearch' visible='true'>
-                            <b:includable id='main'>
-                              <b:include name='widget-title'/>
-                              <b:include name='content'/>
-                            </b:includable>
-                            <b:includable id='content'>
-                              <div class='widget-content' role='search'>
-                              <b:include name='searchForm'/>
+                  <div class='slide-search'>
+                    <b:section id='search_top' name='Search (Top)' showaddelement='true'>
+                      <b:widget id='BlogSearch1' locked='true' title='이 블로그 검색' type='BlogSearch' visible='true'>
+                        <b:includable id='main'>
+                          <b:include name='widget-title'/>
+                          <b:include name='content'/>
+                        </b:includable>
+                        <b:includable id='content'>
+                          <div class='widget-content' role='search'>
+                            <b:include name='searchForm'/>
+                          </div>
+                        </b:includable>
+                        <b:includable id='searchForm'>
+                          <form class='search-form' expr:action='data:blog.searchUrl'>
+                            <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+                            <input autocomplete='off' class='search-input' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search' value=''/>
+                            <b:include name='searchClose'/>
+                          </form>
+                        </b:includable>
+                        <b:includable id='searchClose'>
+                          <button class='search-close' type='reset' value=''/>
+                        </b:includable>
+                        <b:includable id='searchSubmit'>
+                          <b:if cond='data:widget.sectionId == &quot;search_top&quot;'>
+                            <label class='search-submit'>
+                              <input type='submit'/>
+                              <div class='flat-icon-button ripple'>
+                                <b:include data='{ iconClass: &quot;search-icon&quot; }' name='searchIcon'/>
                               </div>
-                            </b:includable>
-                            <b:includable id='searchForm'>
-                              <form class='search-form' expr:action='data:blog.searchUrl'>
-                                <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
-                                <input autocomplete='off' class='search-input' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search' value=''/>
-                                <b:include name='searchClose'/>
-                              </form>
-                            </b:includable>
-                            <b:includable id='searchClose'>
-                              <button class='search-close' type='reset' value=''/>
-                            </b:includable>
-                            <b:includable id='searchSubmit'>
-                              <b:if cond='data:widget.sectionId == &quot;search_top&quot;'>
-                                <label class='search-submit'>
-                                  <input type='submit'/>
-                                  <div class='flat-icon-button ripple'>
-                                    <b:include data='{ iconClass: &quot;search-icon&quot; }' name='searchIcon'/>
-                                  </div>
-                                </label>
-                              <b:else/>
-                                <b:include name='super.searchSubmit'/>
-                              </b:if>
-                            </b:includable>
-                          </b:widget>
-                        </b:section>
-                      </div>
-                    </div>
+                            </label>
+                          <b:else/>
+                            <b:include name='super.searchSubmit'/>
+                          </b:if>
+                        </b:includable>
+                      </b:widget>
+                    </b:section>
+                  </div>
                 </div>
-                <div class=''>
+                <div class='slide-body'>
                   <nav class='nav-wrapper' role='navigation'>
                       <b:section class='vtrick-pro-main-nav' id='vtrick-pro-main-nav' maxwidgets='1' name='Header Menu' showaddelement='no'>
                         <b:widget id='LinkList101' locked='true' title='헤더 목록' type='LinkList' version='2' visible='true'>
@@ -996,9 +984,9 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
                       </b:section>
                   </nav>
                 </div>
-                <div class=''>
-                  <div class='mm-social'/>
-                  <div class='mm-menu'/>
+                <div class='slide-footer'>
+                  <div class='slide-social'/>
+                  <div class='slide-page-list'/>
                 </div>
               </div>
             </div>
