@@ -139,7 +139,7 @@ $(".tgl-search-btn").on("click", function() {
   $("body").addClass("search-active");
   $(".slide-search").fadeIn(170).find("input").focus();
   });
-$(".tgl-nav-btn").on("click",function(){$("body").toggleClass("nav-active")});
+$(".tgl-nav-btn").on("click",function(){$("body").addClass("nav-active")});
 $(".hideSlide-btn").on("click", function() {
   const $body = $("body");
   if ($body.hasClass("search-active")) {
