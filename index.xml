@@ -163,7 +163,7 @@ dl,ul{list-style-position:inside;list-style:none}ul li{list-style:none}
 caption{text-align:center}
 img{border:none;position:relative}
 a{color:inherit}
-a:hover{text-decoration:underline}
+a:hover,a:visited{text-decoration:none}
 a img{border:0}
 abbr{text-decoration:none}
 .clearfix{clear:both}
@@ -299,32 +299,34 @@ a,button,input{transition:all 0s ease}
 .tgl-nav-btn:after{content:"\f479";font-family:bootstrap-icons;font-size:18px;font-weight:900}
 
 /* 슬라이드 */
-#slide,
+.slide-header,
+.slide-body,
+.slide-footer,
 .overlay{display:none}
 
 /* 검색 슬라이드 온 */
-.search-active #slide {-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
-.search-active .hideSlide-btn,
-.search-active .slide-body,
-.search-active .slide-footer{display:none}
+.search-active #slide {top:0;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.search-active .slide-header{display:flex}
 
 /* 메뉴 슬라이드 온 */
-.nav-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.nav-active #slide{bottom:0;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.nav-active .hideSlide-btn,
+.nav-active .slide-header,
+.nav-active .slide-body,
+.nav-active.slide-footer{display:block}
 .nav-active .overlay{display:block;opacity:1}
 
-#slide{width:100%;position:fixed;top:0;left:0;bottom:0;background-color:$(header.bg.color);overflow:hidden;z-index:1010;left:0;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
+#slide{width:100%;position:fixed;top:0;left:0;right:0;background-color:$(header.bg.color);overflow:hidden;z-index:101;-webkit-transform:translateX(100%);transform:translateX(100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .5s ease}
 .overlay{position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;background-color:rgba(0,0,0,.8);z-index:1000;margin:0;transition:all .25s ease}
-.slide-header {height:64px;display:flex;justify-content:space-between;align-items:center}
-.tgl-hideSlide-btn{width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
-.tgl-hideSlide-btn:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}
+.slide-header {height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 15px}
+.hideSlide-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
+.hideSlide-btn:before{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
 .slide-search{position:relative;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
 .slide-search .section{width:100%}
 .slide-search .search-form{position:relative;height:38px;background-color:$(lightgray);display:flex;flex:1;border:0;border-radius:var(--radius)}
 .slide-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
 .slide-search .search-input::placeholder,.main-search .search-input:focus{color:var(--header-color);outline:0}
 .slide-search .search-input::placeholder{opacity:.65}
-.slide-search .search-close{width:40px;background-color:unset;font-size:16px;color:var(--header-color);text-align:center;cursor:pointer;border:0}
-.slide-search .search-close:before{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
 .slide-search-inner .search-close:hover{color:var(--header-hover-color)}
 @-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
 
@@ -948,11 +950,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
                   <form class='search-form' expr:action='data:blog.searchUrl'>
                     <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
                     <input autocomplete='off' class='search-input' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search' value=''/>
-                    <b:include name='searchClose'/>
                   </form>
-                </b:includable>
-                <b:includable id='searchClose'>
-                  <button class='search-close' type='reset' value=''/>
                 </b:includable>
                 <b:includable id='searchSubmit'>
                   <b:if cond='data:widget.sectionId == &quot;search_top&quot;'>
