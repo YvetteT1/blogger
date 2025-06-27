@@ -162,7 +162,7 @@ $(function(){
   // t.find(".mega-items").remove(),
   // t.find(".mega-menu > a").each(function(e,t){var a=$(this),o=a.data("shortcode");null!=o&&(t="recent"==(e=shortCodeIfy(o.trim(),"label"))?"/search":"/search/label/"+e,a.attr("href",t))}),
   // t.appendTo(e),
-  $(".tgl-nav-btn, .tgl-hideSlide-btn, .overlay").on("click",function(){$("body").toggleClass("slide-active")});
+  $(".tgl-nav-btn, .tgl-hideSlide-btn, .overlay").on("click",function(){$("body").toggleClass("nav-active")});
   // $(".vtrick-pro-main-nav-menu .has-sub").append('<div class="submenu-toggle"/>'),
   // $(".vtrick-pro-main-nav-menu .mega-menu").find(".submenu-toggle").remove(),
   // $(".vtrick-pro-main-nav-menu ul li .submenu-toggle").on("click",function(e){$(this).parent().hasClass("has-sub")&&(e.preventDefault(),$(this).parent().hasClass("show")?$(this).parent().removeClass("show").find("> .m-sub").slideToggle(170):$(this).parent().addClass("show").children(".m-sub").slideToggle(170))})
