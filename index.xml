@@ -282,27 +282,27 @@ a,button,input{transition:all 0s ease}
 #header-wrapper.is-fixed{width:100%;height:64px;position:fixed;top:-64px;left:0;z-index:990;backface-visibility:hidden;visibility:hidden;transition:all .25s ease}
 #header-wrapper.is-fixed.show{top:0;visibility:visible;margin:0}
 .header-inner{width:100%;height:100%;max-width:$(total.width);display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between}
-.header-left-container{display:flex;justify-content:flex-start;align-items:center;}
+.header-left-container{display:none;justify-content:flex-start;align-items:center;}
 .main-logo{overflow:ellipsis}
 .main-logo .logo-img{height:34px;display:flex;align-items:center;overflow:hidden}
 .main-logo img{max-width:100%;max-height:100%;display:block}
 .main-logo .blog-title{font:$(blog.title.font);color:$(header.blog.color)}
 .main-logo #h1-off{position:absolute;top:-9000px;left:-9000px;display:none;visibility:hidden}
 
-.header-right-container{display:flex;justify-content:flex-end;align-items:center;}
-.tgl-btn-style{width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(pureblack)}
+.header-right-container{display:none;justify-content:flex-end;align-items:center;}
+.tgl-btn-style{width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
 /* 헤더 검색 */
 .tgl-search-btn:after{content:"\f52a";font-family:bootstrap-icons;font-size:14px;font-weight:700}
 .tgl-search-btn{transition:opacity .17s ease}
 /* 헤더 메뉴 */
 .tgl-nav-btn:after{content:"\f479";font-family:bootstrap-icons;font-size:18px;font-weight:900}
 
-#slide{display:none;position:fixed;width:100%;height:100%;top:0;left:0;bottom:0;background-color:var(--mobilemenu-bg);overflow:hidden;z-index:101;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
-.slide-header {position:absolute;top:0;right:0;width:100%;height:56px;background-color:var(--header-bg);z-index:25}
-.hide-slide{display:none}
-.hide-slide:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}
+#slide{width:100%;position:fixed;top:0;left:0;bottom:0;background-color:$(white);overflow:hidden;z-index:101;visibility:hidden;-webkit-transform:translateX(-100%);transform:translateX(-100%);box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
 
-@-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
+.slide-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+
+.slide-header {display:flex;justify-content:space-between;align-items:center}
+.tgl-hideSlide-btn:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}
 .slide-search{position:relative;padding-right:1rem;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
 .slide-search .section{width:100%}
 .slide-search .search-form{position:relative;height:38px;background-color:$(lightgray);display:flex;flex:1;border:0;border-radius:var(--radius)}
@@ -313,26 +313,20 @@ a,button,input{transition:all 0s ease}
 .slide-search .search-close:before{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
 .slide-search-inner .search-close:hover{color:var(--header-hover-color)}
 .overlay{visibility:hidden;opacity:0;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);z-index:1000;margin:0;transition:all .25s ease}
+@-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
 
-.slide-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
-.slide-active .slide-header{position:relative;float:left;width:100%;height:59px;background-color:var(--mobilemenu-bg);overflow:hidden;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-color)}
 
 .slide-body{display:none;position:relative;float:left;width:100%;height:calc(100% - 59px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
-
 #vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
-.nav-wrapper{display:none;}
-#vtrick-pro-main-nav{position:static;height:58px;z-index:10}
-#vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
-#vtrick-pro-main-nav ul#vtrick-pro-main-nav-menu{display:flex;flex-wrap:wrap}
-#vtrick-pro-main-nav ul>li{position:relative;padding:0;margin:0}#vtrick-pro-main-nav-menu>li:not(:first-child){margin-left:8px}#vtrick-pro-main-nav-menu>li>a{position:relative;display:block;height:50px;font-family:var(--menu-font);font-size:15px;color:var(--header-color);font-weight:600;line-height:50px;padding:0 14px;border-radius:var(--box-radius);margin:4px 0}
-#vtrick-pro-main-nav ul>li>.ul,#vtrick-pro-main-nav ul>li>ul{position:absolute;left:0;top:58px;width:180px;background-color:var(--submenu-bg);z-index:99999;padding:5px 0;backface-visibility:hidden;visibility:hidden;opacity:0;transform:translate3d(0,-10px,0);border-radius:var(--radius);box-shadow:0 1px 2px rgba(0,0,0,.1),0 5px 10px 0 rgba(0,0,0,.1)}
+#vtrick-pro-main-nav ul>li{position:relative;padding:0;margin:0}
+#vtrick-pro-main-nav-menu>li:not(:first-child){margin-left:8px}
+#vtrick-pro-main-nav-menu>li>a{position:relative;display:block;height:50px;font:$(header.menuList.font);color:$(header.menuList.color);line-height:50px;padding:0 14px;border-radius:var(--box-radius);margin:4px 0}
+#vtrick-pro-main-nav ul>li>.ul,#vtrick-pro-main-nav ul>li>ul{position:absolute;left:0;top:58px;width:180px;z-index:99999;padding:5px 0;backface-visibility:hidden;visibility:hidden;opacity:0;transform:translate3d(0,-10px,0);border-radius:var(--radius);box-shadow:0 1px 2px rgba(0,0,0,.1),0 5px 10px 0 rgba(0,0,0,.1)}
 #vtrick-pro-main-nav ul>li>ul>li>ul{position:absolute;top:-5px;left:100%;transform:translate3d(-10px,0,0);margin:0}
 #vtrick-pro-main-nav ul>li>ul>li{display:block;float:none;position:relative}
-#vtrick-pro-main-nav ul>li>ul>li a{position:relative;display:block;font-size:14px;color:var(--submenu-color);font-weight:400;padding:8px 14px;margin:0}
-#vtrick-pro-main-nav ul>li.has-sub>a:after{content:"\f282";float:right;font-family:bootstrap-icons;font-size:9px;font-weight:900;margin:0 0 0 4px}
-#vtrick-pro-main-nav ul>li>ul>li.has-sub>a:after{content:"\f285";float:right;margin:0}
-#vtrick-pro-main-nav ul .ul,#vtrick-pro-main-nav ul ul{transition:visibility .1s ease,opacity .17s ease,transform .17s ease}
-#vtrick-pro-main-nav ul>li:hover>.ul,#vtrick-pro-main-nav ul>li:hover>ul,#vtrick-pro-main-nav ul>li>ul>li:hover>ul{visibility:visible;opacity:1;transform:translate3d(0,0,0);margin:0}
+#vtrick-pro-main-nav ul>li>ul>li a{position:relative;display:block;font:$(header.menuItem.font);color:$(header.menuItem.color);padding:8px 14px;margin:0}
+#vtrick-pro-main-nav ul>li.has-sub>a:after{content:"\f282";float:right;font-family:bootstrap-icons;font-size:9px;font-weight:900;margin:0}
+
 #vtrick-pro-main-nav .mega-menu{position:static!important}
 #vtrick-pro-main-nav .mega-menu>.ul{width:100%;background-color:var(--megamenu-bg);overflow:hidden;padding:20px}
 
@@ -359,17 +353,17 @@ a,button,input{transition:all 0s ease}
 .mega-menu .error-msg{justify-content:center}
 
 .slide-footer{display:none;position:relative;float:left;width:100%;padding:20px 16px;margin:0}
-.mm-footer .mm-menu,.mm-footer .mm-social{position:relative;float:left;width:100%;margin:8px 0 0}
-.mm-footer .mm-social{margin:0}
-.mm-footer ul{display:flex;flex-wrap:wrap}
-.mm-footer .mm-social ul li{margin:0 16px 0 0}
-.mm-footer .mm-social ul li:last-child{margin:0}
-.mm-footer .mm-social ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);padding:0}
-.mm-footer .mm-social ul li a:hover{color:var(--mobilemenu-hover-color)}
-.mm-footer .mm-menu ul li{margin:5px 18px 0 0}
-.mm-footer .mm-menu ul li:last-child{margin:5px 0 0}
-.mm-footer .mm-menu ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}
-.mm-footer .mm-menu ul li a:hover{color:var(--mobilemenu-hover-color)}
+.slide-footer .page-list,.slide-footer .social{position:relative;float:left;width:100%;margin:8px 0 0}
+.slide-footer .social{margin:0}
+.slide-footer ul{display:flex;flex-wrap:wrap}
+.slide-footer .social ul li{margin:0 16px 0 0}
+.slide-footer .social ul li:last-child{margin:0}
+.slide-footer .social ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);padding:0}
+.slide-footer .social ul li a:hover{color:var(--mobilemenu-hover-color)}
+.slide-footer .page-list ul li{margin:5px 18px 0 0}
+.slide-footer .page-list ul li:last-child{margin:5px 0 0}
+.slide-footer .page-list ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}
+.slide-footer .page-list ul li a:hover{color:var(--mobilemenu-hover-color)}
 
 .overlay{display:none}
 .nav-active .overlay{visibility:visible;opacity:1}
@@ -438,6 +432,9 @@ ul.cta-containter{display:block;position:fixed;z-index:50;width:40px;bottom:18px
 
 @media only screen and (min-width:980px){
   #vtrick-pro-main-nav .show-menu{display:block}
+  #vtrick-pro-main-nav{height:58px;z-index:10}
+  #vtrick-pro-main-nav ul#vtrick-pro-main-nav-menu{display:flex;flex-wrap:wrap}
+
 }
 @media only screen and (min-width:$(total.width + 60px)){}
 
@@ -939,8 +936,8 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
       </div>
       <div id='slide'>
         <div class='slide-header'>
-          <a class='hide-slide' href='javascript:;' role='button'/>
-                    <!-- Search -->
+          <a class='tgl-btn-style tgl-hideSlide-btn' href='javascript:;' role='button'/>
+          <!-- Search -->
           <div class='slide-search'>
             <b:section id='search_top' name='Search (Top)' showaddelement='true'>
               <b:widget id='BlogSearch1' locked='true' title='이 블로그 검색' type='BlogSearch' visible='true'>
@@ -1002,8 +999,8 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
           </nav>
         </div>
         <div class='slide-footer'>
-          <div class='slide-social'/>
-          <div class='slide-page-list'/>
+          <div class='social'/>
+          <div class='page-list'/>
         </div>
       </div>
       <div class='overlay'/>
