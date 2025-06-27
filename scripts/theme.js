@@ -137,10 +137,8 @@ $("#header-wrapper").each(function(){
 }),
 $(".tgl-search-btn").on("click", function() {
   $("body").addClass("search-active");
-  $(".slide-search").fadeIn(170, function() {
-    $(this).find("input").focus();
+  $(".slide-search").fadeIn(170).find("input").focus();
   });
-});
 $(".tgl-nav-btn").on("click",function(){$("body").toggleClass("nav-active")});
 $(".hideSlide-btn").on("click", function() {
   const $body = $("body");

@@ -278,7 +278,7 @@ a,button,input{transition:all 0s ease}
 .svg-wrap > * {grid-area: 1/1}
 
 /*! Header */
-#header-wrapper{width:100%;height:64px;margin:0;border-bottom:1px solid var(--border-color)}
+#header-wrapper{width:100%;height:64px;margin:0;padding:0 15px;border-bottom:1px solid var(--border-color)}
 #header-wrapper.is-fixed{width:100%;height:64px;position:fixed;top:-64px;left:0;z-index:990;backface-visibility:hidden;visibility:hidden;transition:all .25s ease}
 #header-wrapper.is-fixed.show{top:0;visibility:visible;margin:0}
 .header-inner{width:100%;height:100%;max-width:$(total.width);display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between}
@@ -310,20 +310,22 @@ a,button,input{transition:all 0s ease}
 
 /* 메뉴 슬라이드 온 */
 .nav-active #slide{bottom:0;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
-.nav-active .hideSlide-btn,
+
 .nav-active .slide-header,
+.nav-active .hideSlide-btn{display:flex}
 .nav-active .slide-body,
-.nav-active.slide-footer{display:block}
+.nav-active .slide-footer{display:block}
+
 .nav-active .overlay{display:block;opacity:1}
 
 #slide{width:100%;position:fixed;top:0;left:0;right:0;background-color:$(header.bg.color);overflow:hidden;z-index:10;-webkit-transform:translateX(100%);transform:translateX(100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .5s ease}
 .overlay{position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;background-color:rgba(0,0,0,.8);z-index:5;margin:0;transition:all .25s ease}
 .slide-header {height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 15px}
-.hideSlide-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
-.hideSlide-btn:after{display:block;content:"\f62a";font-family:bootstrap-icons;font-weight:900}
-.slide-search{position:relative;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
+.hideSlide-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color);margin-left:10px}
+.hideSlide-btn:after{display:block;content:"\f62a";font-family:bootstrap-icons;font-size:20px;font-weight:900}
+.slide-search{width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
 .slide-search .section{width:100%}
-.slide-search .search-form{position:relative;height:38px;background-color:$(lightgray);display:flex;flex:1;border:0;border-radius:var(--radius)}
+.slide-search .search-form{height:38px;background-color:$(lightgray);display:flex;border:0;border-radius:var(--radius)}
 .slide-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
 .slide-search .search-input::placeholder,.main-search .search-input:focus{color:var(--header-color);outline:0}
 .slide-search .search-input::placeholder{opacity:.65}
@@ -886,7 +888,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
 <!-- Outer Wrapper -->
 <div id='outer-wrapper'>
   <!-- Header Wrapper -->
-  <header id='header-wrapper' class='uni-component-padding'>
+  <header id='header-wrapper'>
     <div class='header-inner'>
       <div class='header-left-container'>
         <b:section class='main-logo' id='main-logo' maxwidgets='1' name='Header Logo' showaddelement='no'>
