@@ -297,7 +297,6 @@ a,button,input{transition:all 0s ease}
 .tgl-search-btn{transition:opacity .17s ease}
 /* 헤더 메뉴 */
 .tgl-nav-btn:after{content:"\f479";font-family:bootstrap-icons;font-size:18px;font-weight:900}
-
 #slide{width:100%;position:fixed;top:0;left:0;bottom:0;background-color:$(white);overflow:hidden;z-index:101;visibility:hidden;-webkit-transform:translateX(-100%);transform:translateX(-100%);box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
 
 .slide-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
