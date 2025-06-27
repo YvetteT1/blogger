@@ -136,8 +136,17 @@ $("#header-wrapper").each(function(){
   }
 }),
 $(".tgl-search-btn").on("click",function(){$("body").addClass("search-active"),$(".slide-search").fadeIn(170).find("input").focus()});
-$(".hideSlide-btn").on("click",function(){$("body").removeClass("search-active"),$(".slide-search").fadeOut(170).find("input").blur()});
 $(".tgl-nav-btn").on("click",function(){$("body").toggleClass("nav-active")});
+$(".hideSlide-btn").on("click", function() {
+  const $body = $("body");
+  if ($body.hasClass("search-active")) {
+    $body.removeClass("search-active");
+    $(".slide-search").fadeOut(170).find("input").blur();
+  }
+  if ($body.hasClass("nav-active")) {
+    $body.removeClass("nav-active");
+  }
+});
 // $("#vtrick-pro-main-nav").menuify();
 // $("#vtrick-pro-main-nav-menu").each(function(){
 //   var e=$(this)
