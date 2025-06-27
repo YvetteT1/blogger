@@ -1,8 +1,10 @@
-var target=window.location.hash.replace("#","");
-function copyFunction(){document.getElementById("getlink").style.display="inline-block",document.getElementById("getlink").select(),document.execCommand("copy"),document.getElementById("getlink").style.display="none",document.getElementById("LinkCopy").classList.add("copied"),setTimeout(function(){document.getElementById("LinkCopy").classList.remove("copied")},3e3)}
+var target=window.location.hash.replace("#",""); //
+//functions
+// function copyFunction(){document.getElementById("getlink").style.display="inline-block",document.getElementById("getlink").select(),document.execCommand("copy"),document.getElementById("getlink").style.display="none",document.getElementById("LinkCopy").classList.add("copied"),setTimeout(function(){document.getElementById("LinkCopy").classList.remove("copied")},3e3)}
 function shortCodeIfy(e,t,a){for(var o=e.split("$"),r=/[^{\}]+(?=})/g,i=0;i<o.length;i++){var s=o[i].split("=");if(s[0].trim()==t)return null!=(a=s[1]).match(r)&&String(a.match(r)).trim()}return!1}
 function msgError(){return'<span class="error-msg"><b>Error:</b>&nbsp;No Results Found</span>'}
-function beforeLoader(){return'<div class="loader"></div>'}function getFeedUrl(e,t,a,o){switch(a){case"recent":o="/feeds/posts/default?alt=json&max-results="+t;break;default:o="comments"==e?"/feeds/comments/default?alt=json&max-results="+t:"/feeds/posts/default/-/"+a+"?alt=json&max-results="+t}return o}
+function beforeLoader(){return'<div class="loader"></div>'}
+function getFeedUrl(e,t,a,o){switch(a){case"recent":o="/feeds/posts/default?alt=json&max-results="+t;break;default:o="comments"==e?"/feeds/comments/default?alt=json&max-results="+t:"/feeds/posts/default/-/"+a+"?alt=json&max-results="+t}return o}
 function getPostLink(e,t){for(var a=0;a<e[t].link.length;a++)if("alternate"==e[t].link[a].rel){var o=e[t].link[a].href;break}return o}
 function getPostTitle(e,t,a){return e[t].title.$t?e[t].title.$t:exportify.noTitle}
 function getPostTag(e,t,a){return e[t].category?'<span class="entry-category">'+e[t].category[0].term+"</span>":""}
@@ -105,13 +107,18 @@ function disqusComments(e){var t=document.createElement("script");t.type="text/j
 function beautiAvatar(e){$(e).attr("src",function(e,t){return(t=(t=t.replace("//resources.blogblog.com/img/blank.gif","//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/s39/avatar.jpg")).replace("//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35","//4.bp.blogspot.com/-oSjP8F09qxo/Wy1J9dp7b0I/AAAAAAAACF0/ggcRfLCFQ9s2SSaeL9BFSE2wyTYzQaTyQCK4BGAYYCw/s39/avatar.jpg")).replace("/s35","/s39")})}
 function fixedSidebarIfy(e){$(e).each(function(e){fixedSidebar="undefined"==typeof fixedSidebar||fixedSidebar,1==fixedSidebar&&(e=1==fixedMenu?89:30,$(this).theiaStickySidebar({containerSelector:"#content-wrapper > .container",additionalMarginTop:e,additionalMarginBottom:30}))})}
 
+// 코드 본문
 window.location.hash="",
 $(window).on("load",function(){target&&$("html, body").animate({scrollTop:$("#"+target).offset().top},700,"swing",function(){}),$('a[href*="#"]:not(".tocify-wrap a")').on("click",function(e){let t=this.hash,a=new URL(this.href),o=new URL(window.location.href);a.hash="",o.hash="",t&&$(t).length&&a.href==o.href&&(e.preventDefault(),$("html, body").animate({scrollTop:$(t).offset().top-10},750))})}),
-fixedMenu="undefined"==typeof fixedMenu||fixedMenu,viewAllText="undefined"!=typeof viewAllText?viewAllText:exportify.viewAll,
+fixedMenu="undefined"==typeof fixedMenu||fixedMenu,
+viewAllText="undefined"!=typeof viewAllText?viewAllText:exportify.viewAll,
+
 $("#vtrick-pro-main-nav").menuify(),
 // $("#vtrick-pro-main-nav .widget").addClass("show-menu"),
-$(".slide-search-btn").on("click",function(){$("body").addClass("search-active"),$(".search-header").fadeIn(170).find("input").focus()}),
-$(".search-close").on("click",function(){$("body").removeClass("search-active"),$(".search-header").fadeOut(170).find("input").blur()}),
+$(".tgl-search-btn").on("click",function(){$("body").addClass("search-active"),$(".slide-search").fadeIn(170).find("input").focus()}),
+$(".search-close").on("click",function(){$("body").removeClass("search-active"),$(".slide-search").fadeOut(170).find("input").blur()}),
+
+
 $("#ticker .PopularPosts .widget-content").tickerify(),$(".bp-title a.wt-l").each(function(){""!=viewAllText.trim()&&$(this).text(viewAllText)}),
 $(".sidebar .social-icons li a").each(function(e){var t=$(this),a=t.attr("href").split("#");null!=a[1]&&""!=(e=a[1].trim())&&t.append('<span class="text">'+e+"</span>"),t.attr("href",a[0].trim())}),
 $(".FollowByEmail .widget-content").each(function(e,t){var a=$(this),o=a.data("shortcode");null!=o&&(e=shortCodeIfy(o,"title"),t=shortCodeIfy(o,"text"),0!=e&&a.find(".follow-by-email-title").text(e),0!=t&&a.find(".follow-by-email-text").text(t))}),
@@ -158,7 +165,7 @@ $(function(){
   }),
   $(".slide-footer .slide-social").each(function(){var e=$(this),t=$("#vtrick-pro-about-section ul.social").clone();t.removeClass("social-bg-hover"),t.appendTo(e)}),
   $(".slide-footer .slide-page-list").each(function(){var e=$(this);$("#footer-menu ul.link-list").clone().appendTo(e)}),
-  $(".header-inner").each(function(){var e=$(this);if(1==fixedMenu&&e.length>0){var t=$(document).scrollTop(),a=e.offset().top,o=e.height(),r=a+o+o;$(window).scroll(function(){var o=$(document).scrollTop();o>r?e.addClass("is-fixed"):(o<a||o<=1)&&e.removeClass("is-fixed"),o>t?e.removeClass("show"):e.addClass("show"),t=o})}}),
+  $("#header-wrapper").each(function(){var e=$(this);if(1==fixedMenu&&e.length>0){var t=$(document).scrollTop(),a=e.offset().top,o=e.height(),r=a+o+o;$(window).scroll(function(){var o=$(document).scrollTop();o>r?e.addClass("is-fixed"):(o<a||o<=1)&&e.removeClass("is-fixed"),o>t?e.removeClass("show"):e.addClass("show"),t=o})}}),
   fixedSidebarIfy("#main-wrapper, #sidebar-wrapper"),
   $("#post-body iframe").each(function(){var e=$(this);e.attr("src").match("www.youtube.com")&&e.wrap('<div class="responsive-video-wrap"/>')}),
   $("p.comment-content").each(function(){var e=$(this);e.replaceText(/(https:\/\/\S+(\.png|\.jpeg|\.jpg|\.gif))/g,'<img src="$1"/>'),e.replaceText(/(?:https:\/\/)?(?:www\.)?(?:youtube\.com)\/(?:watch\?v=)?(.+)/g,'<div class="responsive-video-wrap"><iframe id="youtube" width="100%" height="358" class="lazyload" data-src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')}),
