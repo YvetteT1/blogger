@@ -292,19 +292,32 @@ a,button,input{transition:all 0s ease}
 
 .header-right-container{display:flex;justify-content:flex-end;align-items:center;}
 .tgl-btn-style{width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
-
 /* 검색 버튼 */
 .tgl-search-btn:after{content:"\f52a";font-family:bootstrap-icons;font-size:14px;font-weight:700}
 .tgl-search-btn{transition:opacity .17s ease}
 /* 메뉴 버튼 */
 .tgl-nav-btn:after{content:"\f479";font-family:bootstrap-icons;font-size:18px;font-weight:900}
-/* 슬라이드 */
-#slide{width:100%;display:none;transition:all .25s ease;z-index:101;overflow:hidden;background-color:$(white)}
-.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);z-index:1000;margin:0;transition:all .25s ease}
 
+/* 슬라이드 */
+#slide,
+.overlay{display:none}
+
+/* 검색 슬라이드 온 */
+.search-active #slide {-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.search-active .hideSlide-btn,
+.search-active .slide-body,
+.search-active .slide-footer{display:none}
+
+/* 메뉴 슬라이드 온 */
+.nav-active #slide{-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.nav-active .overlay{display:block;opacity:1}
+
+#slide{width:100%;position:fixed;top:0;left:0;bottom:0;background-color:$(header.bg.color);overflow:hidden;z-index:1010;left:0;-webkit-transform:translateX(-100%);transform:translateX(-100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .25s ease}
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;background-color:rgba(0,0,0,.8);z-index:1000;margin:0;transition:all .25s ease}
 .slide-header {height:64px;display:flex;justify-content:space-between;align-items:center}
+.tgl-hideSlide-btn{width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color)}
 .tgl-hideSlide-btn:before{content:"\f284";font-family:bootstrap-icons;font-weight:900}
-.slide-search{position:relative;padding-right:1rem;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
+.slide-search{position:relative;width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
 .slide-search .section{width:100%}
 .slide-search .search-form{position:relative;height:38px;background-color:$(lightgray);display:flex;flex:1;border:0;border-radius:var(--radius)}
 .slide-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
@@ -315,7 +328,7 @@ a,button,input{transition:all 0s ease}
 .slide-search-inner .search-close:hover{color:var(--header-hover-color)}
 @-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
 
-.slide-body{width:100%;height:calc(100% - 64px);display:none;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
+.slide-body{width:100%;height:calc(100% - 64px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
 #vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
 .vtrick-pro-main-nav-menu .m-sub{display:none}
 .vtrick-pro-main-nav-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
@@ -328,7 +341,7 @@ a,button,input{transition:all 0s ease}
 .vtrick-pro-main-nav-menu>ul>li>ul>li a{font-size:13px;opacity:.75;padding:8px 0 8px 8px}
 .vtrick-pro-main-nav-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
 
-.slide-footer{position:relative;float:left;width:100%;padding:20px 16px;margin:0}
+.slide-footer{width:100%;padding:20px 16px;margin:0}
 .slide-footer .page-list,.slide-footer .social{position:relative;float:left;width:100%;margin:8px 0 0}
 .slide-footer .social{margin:0}
 .slide-footer ul{display:flex;flex-wrap:wrap}
@@ -341,16 +354,7 @@ a,button,input{transition:all 0s ease}
 .slide-footer .page-list ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}
 .slide-footer .page-list ul li a:hover{color:var(--mobilemenu-hover-color)}
 
-/* 검색 슬라이드 온 */
-.search-active #slide {height:64px;display:flex;}
-.search-active .tgl-hideSlide-btn,
-.search-active .slide-body,
-.search-active .slide-footer{display:none}
-.search-active .overlay{top:64px;visibility:visible;opacity:1}
-/* 메뉴 슬라이드 온 */
-.nav-active #slide{display:block;position:fixed;top:0;left:0;bottom:0;box-shadow:3px 0 7px rgba(0,0,0,.1);}
-.nav-active .tgl-hideSlide-btn, .nav-active .slide-body, .nav-active .slide-footer{display:flex}
-.nav-active .overlay{visibility:visible;opacity:1}
+
 
 #header-ads-wrap{position:relative;float:left;width:100%;margin:0;min-height:120px}.header-ads .widget,.header-ads .widget-content{position:relative;float:left;width:100%;margin:0}.header-ads .widget{margin:16px 0 0}
 
@@ -926,7 +930,7 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
       </div>
       <div id='slide'>
         <div class='slide-header'>
-          <a class='tgl-btn-style tgl-hideSlide-btn' href='javascript:;' role='button'/>
+          <a class='hideSlide-btn' href='javascript:;' role='button'/>
           <!-- Search -->
           <div class='slide-search'>
             <b:section id='search_top' name='Search (Top)' showaddelement='true'>

@@ -115,7 +115,7 @@ viewAllText="undefined"!=typeof viewAllText?viewAllText:exportify.viewAll,
 
 $(".tgl-search-btn, .search").on("click",function(){$("body").addClass("search-active"),$(".slide-search").fadeIn(170).find("input").focus()});
 $(".search-close").on("click",function(){$("body").removeClass("search-active"),$(".slide-search").fadeOut(170).find("input").blur()});
-$(".tgl-nav-btn, .tgl-hideSlide-btn, .overlay").on("click",function(){$("body").toggleClass("nav-active")});
+$(".tgl-nav-btn, .hideSlide-btn, .overlay").on("click",function(){$("body").toggleClass("nav-active")});
 $("#vtrick-pro-main-nav").menuify();
 // $("#vtrick-pro-main-nav-menu").each(function(){
 //   var e=$(this)
