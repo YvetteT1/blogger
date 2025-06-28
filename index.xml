@@ -73,7 +73,9 @@ Author Url:   https://www.vietrick.com
 <Group description="Header" selector="#header-wrapper">
   <!-- 컬러 -->
   <Variable name="header.bg.color" description="Header Background" type="color" default="$(white)" value="#fff"/>
-  <Variable name="header.blog.color" description="Header Color" type="color" default="$(darkgray33)" value="#333333"/>
+  <Variable name="header.blog.color" description="Header Blog Color" type="color" default="$(darkgray33)" value="#333333"/>
+  <Variable name="header.search.bg.color" description="Header Search Background Color" type="color" default="$(lightgray)" value="#f0f0f0"/>
+  <Variable name="header.search.value.color" description="Header Search Value Color" type="color" default="$(darkgray22)" value="#222222"/>
   <Variable name="header.menuList.color" description="Header Menu List Color" type="color" default="$(pureblack)" value="#000"/>
   <Variable name="header.menuItem.color" description="Header Menu Item Color" type="color" default="$(semigray77)" value="#777777"/>
   <!-- 폰트  -->
@@ -279,7 +281,7 @@ a,button,input{transition:all 0s ease}
 
 /*! Header */
 #header-wrapper{width:100%;height:64px;margin:0;padding:0 15px;border-bottom:1px solid var(--border-color)}
-#header-wrapper.is-fixed{width:100%;height:64px;position:fixed;top:-64px;left:0;z-index:990;backface-visibility:hidden;visibility:hidden;transition:all .25s ease}
+#header-wrapper.is-fixed{width:100%;height:64px;position:fixed;top:-64px;left:0;z-index:990;backface-visibility:hidden;visibility:hidden;transition:all .25s ease;background-color:$(header.bg.color)}
 #header-wrapper.is-fixed.show{top:0;visibility:visible;margin:0}
 .header-inner{width:100%;height:100%;max-width:$(total.width);display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between}
 
@@ -299,53 +301,45 @@ a,button,input{transition:all 0s ease}
 .tgl-nav-btn:after{content:"\f479";font-family:bootstrap-icons;font-size:18px;font-weight:900}
 
 /* 슬라이드 */
-.slide-header,
-.slide-body,
-.slide-footer,
-.overlay{display:none}
+.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;background-color:rgba(0,0,0,.8);margin:0;transition:all .25s ease;z-index:9}
 
-/* 검색 슬라이드 온 */
-.search-active #slide {top:0;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
-.search-active .slide-header{display:flex}
+#slide{width:100%;display:none;background-color:$(header.bg.color);overflow:hidden;-webkit-transform:translateX(100%);transform:translateX(100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .5s ease;z-index:10}
 
-/* 메뉴 슬라이드 온 */
-.nav-active #slide{bottom:0;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+.slide-header {height:64px;display:none;padding:0 15px;border-bottom:1px solid var(--border-color)}
 
-.nav-active .slide-header,
-.nav-active .hideSlide-btn{display:flex}
-.nav-active .slide-body,
-.nav-active .slide-footer{display:block}
-
-.nav-active .overlay{display:block;opacity:1}
-
-#slide{width:100%;position:fixed;top:0;left:0;right:0;background-color:$(header.bg.color);overflow:hidden;z-index:10;-webkit-transform:translateX(100%);transform:translateX(100%);visibility:hidden;box-shadow:3px 0 7px rgba(0,0,0,.1);transition:all .5s ease}
-.overlay{position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;background-color:rgba(0,0,0,.8);z-index:5;margin:0;transition:all .25s ease}
-.slide-header {height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 15px}
-.hideSlide-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color);margin-left:10px}
-.hideSlide-btn:after{display:block;content:"\f62a";font-family:bootstrap-icons;font-size:20px;font-weight:900}
-.slide-search{width:100%;height:100%;display:flex;align-items:center;animation:showSearch .17s ease}
+.slide-search{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 .slide-search .section{width:100%}
-.slide-search .search-form{height:38px;background-color:$(lightgray);display:flex;border:0;border-radius:var(--radius)}
-.slide-search .search-input{width:100%;flex:1;background-color:rgba(0,0,0,0);font-family:inherit;font-size:14px;color:var(--header-color);font-weight:400;text-align:left;padding:0 16px;border:0}
-.slide-search .search-input::placeholder,.main-search .search-input:focus{color:var(--header-color);outline:0}
+.slide-search .search-form{height:38px;background-color:$(header.search.bg.color);display:flex;border:0;border-radius:var(--radius)}
+.slide-search .search-input{width:100%;background-color:inherit;font:$(search.value.font);text-align:left;padding:0 16px;border:0;color:$(header.search.value.color)}
+.slide-search .search-input::placeholder,.main-search .search-input:focus{color:$(pureblack);outline:0}
 .slide-search .search-input::placeholder{opacity:.65}
-.slide-search-inner .search-close:hover{color:var(--header-hover-color)}
 @-webkit-keyframes showSearch{0%{width:80%;opacity:0}100%{width:100%;opacity:1}}
 
-.slide-body{width:100%;height:calc(100% - 64px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
+.hideSlide-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:$(header.menuList.color);margin-left:10px}
+.hideSlide-btn:after{display:block;content:"\f62a";font-family:bootstrap-icons;font-size:20px;font-weight:900}
+
+.slide-body{display:none;width:100%;height:calc(100% - 64px);overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;margin:0}
+
 #vtrick-pro-main-nav .widget,#vtrick-pro-main-nav .widget>.widget-title{display:none}
-.vtrick-pro-main-nav-menu .m-sub{display:none}
-.vtrick-pro-main-nav-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
+.vtrick-pro-mobile-menu{position:relative;float:left;width:100%;padding:16px}
+.vtrick-pro-mobile-menu .m-sub{display:none}
+.vtrick-pro-mobile-menu ul li{position:relative;display:block;overflow:hidden;float:left;width:100%;margin:0}
+.vtrick-pro-mobile-menu>ul li ul{overflow:hidden}
+.vtrick-pro-mobile-menu ul li a{font-size:15px;color:var(--mobilemenu-color);font-weight:400;padding:8px 0;display:block}
+.vtrick-pro-mobile-menu>ul>li>a{font-family:var(--menu-font);font-weight:600}
+.vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle{position:absolute;top:0;right:0;width:30px;color:var(--mobilemenu-color);text-align:right;cursor:pointer;padding:8px 0}
+.rtl .vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle{text-align:left;right:auto;left:0}
+.vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle:after{content:"\f282";font-family:bootstrap-icons;font-weight:900;float:right;font-size:12px;text-align:right;transition:all 0s ease}
+.rtl .vtrick-pro-mobile-menu ul li.has-sub .submenu-toggle:after{float:left}
+.vtrick-pro-mobile-menu ul li.has-sub.show>.submenu-toggle:after{content:"\f286"}
+.vtrick-pro-mobile-menu ul li a:hover,.vtrick-pro-mobile-menu ul li.has-sub.show>.submenu-toggle,.vtrick-pro-mobile-menu ul li.has-sub.show>a{color:var(--mobilemenu-hover-color)}
+.vtrick-pro-mobile-menu>ul>li>ul>li a{font-size:14px;opacity:.75;padding:8px 0 8px 10px}
+.rtl .vtrick-pro-mobile-menu>ul>li>ul>li a{padding:8px 10px 8px 0}
+.vtrick-pro-mobile-menu>ul>li>ul>li>ul>li>a{padding:8px 0 8px 20px}
+.rtl .vtrick-pro-mobile-menu>ul>li>ul>li>ul>li>a{padding:8px 20px 8px 0}
+.vtrick-pro-mobile-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
 
-.vtrick-pro-main-nav-menu ul li a{font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:8px 0;display:block}
-.vtrick-pro-main-nav-menu ul li.has-sub .submenu-toggle{position:absolute;top:0;right:0;width:30px;color:$(header.menuItem.color);text-align:right;cursor:pointer;padding:8px 0}
-.vtrick-pro-main-nav-menu ul li.has-sub .submenu-toggle:after{content:"\f282";font-family:bootstrap-icons;font-weight:900;float:right;font-size:12px;text-align:right;transition:all 0s ease}
-.vtrick-pro-main-nav-menu ul li.has-sub.show>.submenu-toggle:after{content:"\f286"}
-.vtrick-pro-main-nav-menu>ul li ul{overflow:hidden}
-.vtrick-pro-main-nav-menu>ul>li>ul>li a{font-size:13px;opacity:.75;padding:8px 0 8px 8px}
-.vtrick-pro-main-nav-menu ul>li>.submenu-toggle:hover{color:var(--mobilemenu-hover-color)}
-
-.slide-footer{width:100%;padding:20px 16px;margin:0}
+.slide-footer{width:100%;display:none;padding:20px 16px;margin:0}
 .slide-footer .page-list,.slide-footer .social{position:relative;float:left;width:100%;margin:8px 0 0}
 .slide-footer .social{margin:0}
 .slide-footer ul{display:flex;flex-wrap:wrap}
@@ -357,6 +351,21 @@ a,button,input{transition:all 0s ease}
 .slide-footer .page-list ul li:last-child{margin:5px 0 0}
 .slide-footer .page-list ul li a{display:block;font-size:14px;color:var(--mobilemenu-color);font-weight:400;padding:0}
 .slide-footer .page-list ul li a:hover{color:var(--mobilemenu-hover-color)}
+
+.overlay{display:none}
+
+/* 검색 및 메뉴 슬라이드 온 */
+.slide-on{display:block;-webkit-transform:translateX(0);transform:translateX(0);visibility:visible}
+
+.slide-on .search #slide{position:fixed;top:0;left:0}
+.slide-on .nav #slide{position:fixed;top:0;left:0;right:0;bottom:0}
+
+.search .slide-header,
+.nav .slide-header{display:flex;flex;justify-content:space-between;align-items:center}
+
+.nav .slide-body{display:flex;flex-direction:column;justify-content:space-between;}
+.nav .slide-footer{display:flex;flex;justify-content:space-between;align-items:center}
+.nav .overlay{display:block;opacity:1}
 
 #header-ads-wrap{position:relative;float:left;width:100%;margin:0;min-height:120px}.header-ads .widget,.header-ads .widget-content{position:relative;float:left;width:100%;margin:0}.header-ads .widget{margin:16px 0 0}
 
@@ -965,8 +974,8 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
                 </b:includable>
               </b:widget>
             </b:section>
-            <a class='hideSlide-btn' href='javascript:;' role='button'/>
           </div>
+          <a class='hideSlide-btn' href='javascript:;' role='button'/>
         </div>
         <div class='slide-body'>
           <nav class='nav-wrapper' role='navigation'>
@@ -991,8 +1000,8 @@ body#layout #vtrick-pro-cta2-section > h4:after{content:' - Right Call to Action
           </nav>
         </div>
         <div class='slide-footer'>
-          <div class='social'/>
-          <div class='page-list'/>
+          <div class='slide-social'/>
+          <div class='slide-page-list'/>
         </div>
       </div>
       <div class='overlay'/>
