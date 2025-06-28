@@ -145,7 +145,7 @@ $(".tgl-nav-btn").on("click",function(){
   $("body").addClass("nav")
 });
 $(".hideSlide-btn").on("click", function() {
-  $("body").removeClass("slide-active");
+  $("body").removeClass("slide-on search nav");
   $(".slide-search").fadeOut(170).find("input").blur();
   });
 $("#vtrick-pro-main-nav").menuify();
